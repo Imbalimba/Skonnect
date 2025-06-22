@@ -1,0 +1,422 @@
+/* Enhanced YouthProfileForm styles */
+.youth-ypf-container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 20px;
+  font-family: 'Khand', sans-serif;
+}
+
+/* Notification styling with enhanced animation */
+.youth-ypf-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.youth-ypf-notification.success {
+  background-color: #28a745;
+  color: white;
+  border-left: 4px solid #1e7e34;
+}
+
+.youth-ypf-notification.error {
+  background-color: #dc3545;
+  color: white;
+  border-left: 4px solid #bd2130;
+}
+
+/* Form wrapper with enhanced styling */
+.youth-ypf-form-wrapper {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.youth-ypf-form-wrapper:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced header styling */
+.youth-ypf-header {
+  background: linear-gradient(135deg, var(--youth-primary), var(--youth-primary-dark));
+  color: white;
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.youth-ypf-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--youth-primary-dark), var(--youth-secondary));
+}
+
+.youth-ypf-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.youth-ypf-header p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+/* Progress bar styling with animations */
+.youth-ypf-progress {
+  display: flex;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.youth-ypf-progress-step {
+  flex: 1;
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: #666;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.youth-ypf-progress-step.active {
+  color: var(--youth-primary);
+  font-weight: 600;
+  background-color: rgba(36, 86, 166, 0.05);
+}
+
+.youth-ypf-progress-step.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--youth-primary), var(--youth-primary-dark));
+  transform-origin: left;
+  animation: progressBarFill 0.4s ease forwards;
+}
+
+@keyframes progressBarFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Form content with better spacing and animations */
+.youth-ypf-form-content {
+  padding: 25px;
+}
+
+.youth-ypf-form-page {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.youth-ypf-form-page h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--youth-primary);
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.youth-ypf-form-page h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--youth-primary);
+}
+
+.youth-ypf-form-section {
+  margin-bottom: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+  animation: fadeIn 0.5s ease;
+}
+
+.youth-ypf-form-section h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: var(--youth-primary);
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.youth-ypf-form-section h3::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 18px;
+  background-color: var(--youth-primary);
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+/* Form row with enhanced spacing */
+.youth-ypf-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+/* Form groups with better styling */
+.youth-ypf-form-group {
+  flex: 1;
+  min-width: 200px;
+  transition: all 0.2s ease;
+}
+
+.youth-ypf-form-group.full-width {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.youth-ypf-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+/* Enhanced input styling */
+.youth-ypf-form-group input,
+.youth-ypf-form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.youth-ypf-form-group input:hover,
+.youth-ypf-form-group select:hover {
+  border-color: #bbb;
+}
+
+.youth-ypf-form-group input:focus,
+.youth-ypf-form-group select:focus {
+  outline: none;
+  border-color: var(--youth-primary);
+  box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.1);
+}
+
+.youth-ypf-form-group input[readonly] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  border-color: #eee;
+  color: #666;
+}
+
+/* Action buttons with improved styling */
+.youth-ypf-form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+
+.youth-ypf-btn-prev,
+.youth-ypf-btn-next,
+.youth-ypf-btn-submit {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover effect */
+.youth-ypf-btn-prev::after,
+.youth-ypf-btn-next::after,
+.youth-ypf-btn-submit::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.youth-ypf-btn-prev:hover::after,
+.youth-ypf-btn-next:hover::after,
+.youth-ypf-btn-submit:hover::after {
+  transform: translateX(100%);
+}
+
+.youth-ypf-btn-prev {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.youth-ypf-btn-prev:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.youth-ypf-btn-next {
+  background-color: var(--youth-primary);
+  color: white;
+  box-shadow: 0 3px 8px rgba(36, 86, 166, 0.3);
+}
+
+.youth-ypf-btn-next:hover {
+  background-color: var(--youth-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(36, 86, 166, 0.4);
+}
+
+.youth-ypf-btn-submit {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 3px 8px rgba(40, 167, 69, 0.3);
+}
+
+.youth-ypf-btn-submit:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(40, 167, 69, 0.4);
+}
+
+.youth-ypf-btn-submit:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .youth-ypf-container {
+    margin: 40px auto;
+  }
+  
+  .youth-ypf-header {
+    padding: 20px;
+  }
+  
+  .youth-ypf-form-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .youth-ypf-form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .youth-ypf-form-group {
+    min-width: 100%;
+  }
+  
+  .youth-ypf-progress {
+    flex-direction: column;
+  }
+  
+  .youth-ypf-progress-step {
+    padding: 12px;
+  }
+  
+  .youth-ypf-progress-step.active::after {
+    display: none;
+  }
+  
+  .youth-ypf-progress-step.active {
+    background-color: rgba(36, 86, 166, 0.1);
+  }
+  
+  .youth-ypf-form-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .youth-ypf-btn-prev,
+  .youth-ypf-btn-next,
+  .youth-ypf-btn-submit {
+    width: 100%;
+  }
+}
+
+/* Focus state improvements for accessibility */
+.youth-ypf-form-group input:focus-visible,
+.youth-ypf-form-group select:focus-visible {
+  outline: 2px solid var(--youth-primary);
+  outline-offset: 1px;
+}
+
+/* Subtle animation for form sections */
+.youth-ypf-form-section {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.youth-ypf-form-section:hover {
+  transform: translateY(-3px);
+}
+
+/* Select dropdown arrow styling */
+.youth-ypf-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232456a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 40px;
+}

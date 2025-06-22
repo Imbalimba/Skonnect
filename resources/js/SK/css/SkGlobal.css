@@ -1,0 +1,17 @@
+/* SK Global Variables - These are used across all SK components */
+
+:root {
+  --sk-cmn-sklcss-accent: #f1c40f;
+  --sk-cmn-sklcss-dark: #34495e;
+  --sk-cmn-sklcss-light: #ecf0f1;
+  --sk-cmn-sklcss-danger: #e74c3c;
+  --sk-cmn-sklcss-success: #27ae60;
+  --sk-cmn-sklcss-text: #2c3e50;
+  --sk-cmn-sklcss-shadow: rgba(0, 0, 0, 0.1);
+  --sk-cmn-sklcss-primary: #2456a6;
+  --sk-cmn-sklcss-secondary: #d52027;
+  --sk-cmn-sklcss-white: #ffffff;
+  --sk-cmn-sklcss-gradient: linear-gradient(135deg, var(--sk-cmn-sklcss-primary), var(--sk-cmn-sklcss-secondary));
+  --sk-cmn-sklcss-text-muted: #7f8c8d;
+  --sk-cmn-sklcss-border-radius: 8px;
+}

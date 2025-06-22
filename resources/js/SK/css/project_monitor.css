@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Khand", sans-serif;
+}
+
+.dashboard {
+    margin-top: 4rem;
+    margin-left: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard1 {
+    margin-left: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* User Info Section */
+/* Project Monitoring Profile Section - Matching KK Profile style */
+.pm-profile-section {
+    background: linear-gradient(180deg, #D9D9D9, #737373);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    position: relative;
+}
+/* Project Monitoring - Smaller User Info to match KKProfiling */
+.pm-user-info {
+    display: flex;
+    align-items: center;
+    padding: 3px 10px; /* Reduced padding */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px; /* Slightly smaller radius */
+    margin-bottom: 8px;
+    width: fit-content; /* Constrains width to content */
+}
+
+.pm-user-avatar {
+    width: 24px; /* Reduced from 30px */
+    height: 24px; /* Reduced from 30px */
+    font-size: 12px; /* Smaller initial */
+    margin-right: 6px; /* Reduced spacing */
+}
+
+.pm-user-name {
+    font-size: 12px; /* Reduced from 14px */
+    letter-spacing: 0.3px;
+    font-weight: 500; /* Medium weight instead of bold */
+}
+/* Filter Section */
+.filter-section {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Table Styles */
+.table-scroll-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.table-container {
+    min-width: 100%;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #0f4a6a;
+    color: white;
+    padding: 0.75rem;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+}
+
+.table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Action Buttons */
+.action-buttons-wrap {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+    color: #0f4a6a;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.pagination-btn:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.page-number {
+    font-weight: bold;
+    color: #0f4a6a;
+}
+
+/* Modal Overlay 
+.modal.fade.show {
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}*/
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close Button */
+.modal-header .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.modal-header .btn-close:hover {
+    background-color: #eee;
+    color: #f44336;
+}
+
+/* Modal Title */
+.modal-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+/* Modal Body */
+.pm-modal-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: calc(90vh - 150px);
+    overflow-y: auto;
+}
+
+/* Form Group */
+.pm-form-group {
+    margin-bottom: 20px;
+}
+
+/* Row for Side-by-Side Layout */
+.pm-form-group.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Column for Side-by-Side Layout */
+.pm-form-group.row .col-md-6,
+.pm-form-group.row .col-md-4 {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Input Container */
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Form Input Styles */
+.pm-form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid white;
+    background-color: #C4CBD0;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.pm-form-control:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+/* Input Label (Placeholder as Label) */
+.pm-input-label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #C4CBD0;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #000000;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Submit Button Style */
+.project-monitoring-btn-success {
+    background-color: #0c9fcc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+/* Submit Button Hover */
+.project-monitoring-btn-success:hover {
+    background-color: #5b0cda;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .pm-form-group.row .col-md-6,
+    .pm-form-group.row .col-md-4 {
+        flex: 1 1 100%;
+    }
+
+    .pm-modal-body {
+        padding: 15px;
+    }
+}
+
+/* Hide print-only elements by default */
+.print-only {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Print styles */
+@media print {
+    @page {
+        size: landscape;
+    }
+
+    .print-only {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .print-section,
+    .print-section * {
+        visibility: visible !important;
+    }
+
+    .print-template {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .filter-section {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* Publish Modal Styles */
+.selected-tags-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    transition: all 0.2s ease;
+}
+
+.form-check:hover {
+    background-color: #f8f9fa;
+    border-color: #0c9fcc;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #0c9fcc;
+    border-color: #0c9fcc;
+}
+
+.form-check-label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #495057;
+    cursor: pointer;
+}
+
+/* DatePicker Styles */
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid white;
+    background-color: #C4CBD0;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+/* Publish Button Styles */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+}
+
+/* Modal Content Styles */
+.modal-content {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: #0c9fcc;
+    font-weight: 600;
+}
+
+.pm-modal-body {
+    padding: 2rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Form Group Spacing */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Required Field Indicator */
+.pm-input-label::after {
+    content: " *";
+    color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .selected-tags-container {
+        grid-template-columns: 1fr;
+    }
+
+    .pm-modal-body {
+        padding: 1rem;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
+/* Tag Selection Styles */
+.selected-tags-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    transition: all 0.2s ease;
+}
+
+.form-check:hover {
+    background-color: #f8f9fa;
+    border-color: #0c9fcc;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #0c9fcc;
+    border-color: #0c9fcc;
+}
+
+.form-check-label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #495057;
+    cursor: pointer;
+}
+
+/* Gradient Container */
+.pm-gradient-container {
+    background: linear-gradient(135deg, #0f4a6a 0%, #0c9fcc 100%);
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* User Info Section */
+.pm-user-info-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pm-user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #0f4a6a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pm-user-role-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pm-user-name {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Adjust card styles */
+.card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.card-title {
+    color: #0f4a6a;
+    font-weight: 600;
+}

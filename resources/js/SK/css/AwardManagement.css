@@ -1,0 +1,1151 @@
+/* AwardManagement.css - Updated version */
+.sk-award-mgmt-container {
+  padding: 2rem;
+  margin-left: 250px; /* Space for the SK sidebar */
+  min-height: 100vh;
+  background-color: #f8fafd;
+}
+
+@media (max-width: 768px) {
+  .sk-award-mgmt-container {
+    margin-left: 80px; /* Adjust for collapsed sidebar on mobile */
+    padding: 1rem;
+  }
+}
+
+/* Dashboard Layout */
+.sk-award-mgmt-dashboard {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sk-award-mgmt-main {
+  flex: 1;
+}
+
+.sk-award-mgmt-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .sk-award-mgmt-dashboard {
+    flex-direction: column;
+  }
+  
+  .sk-award-mgmt-sidebar {
+    width: 100%;
+  }
+}
+
+/* Header Section */
+.sk-award-mgmt-header {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1E3C72, #2A5298, #8E44AD, #E74C3C);
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.sk-award-mgmt-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+}
+
+.sk-award-mgmt-title {
+  margin: 0 0 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sk-award-mgmt-description {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+/* Statistics Cards */
+.sk-award-stats-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.sk-award-stats-header {
+  background: linear-gradient(to right, #2456a6, #4a69dd);
+  padding: 1.25rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sk-award-stats-body {
+  padding: 1.25rem;
+}
+
+.sk-award-stat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sk-award-stat-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.sk-award-stat-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+
+.sk-award-stat-icon.blue {
+  background-color: #e0f2fe;
+  color: #0ea5e9;
+}
+
+.sk-award-stat-icon.green {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.sk-award-stat-icon.amber {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.sk-award-stat-icon.red {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.sk-award-stat-icon.purple {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+
+.sk-award-stat-info {
+  flex: 1;
+}
+
+.sk-award-stat-title {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 0.25rem;
+}
+
+.sk-award-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1;
+}
+
+.sk-award-category-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.sk-award-category-stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.sk-award-category-stat-name {
+  flex: 1;
+}
+
+.sk-award-category-stat-value {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.sk-award-progress-container {
+  height: 6px;
+  background-color: #f1f5f9;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.sk-award-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #2456a6, #4a69dd);
+  border-radius: 3px;
+}
+
+.sk-award-top-viewed {
+  margin-top: 0.75rem;
+}
+
+.sk-award-top-viewed-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sk-award-top-viewed-item:last-child {
+  border-bottom: none;
+}
+
+.sk-award-top-viewed-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.sk-award-top-viewed-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.sk-award-top-viewed-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #334155;
+  margin: 0 0 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sk-award-top-viewed-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.sk-award-stats-loading {
+  padding: 1rem 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Control Panel */
+.sk-award-mgmt-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Search Section */
+.sk-award-mgmt-search {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sk-award-mgmt-search-input {
+  position: relative;
+  width: 100%;
+}
+
+.sk-award-mgmt-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.sk-award-mgmt-input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 2.75rem;
+  font-size: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #1f2937;
+  background-color: #f9fafb;
+}
+
+.sk-award-mgmt-input:focus {
+  outline: none;
+  border-color: var(--sk-cmn-sklcss-primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.15);
+}
+
+/* Filter Controls */
+.sk-award-mgmt-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sk-award-mgmt-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sk-award-mgmt-filter label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.sk-award-mgmt-select {
+  padding: 0.65rem 2rem 0.65rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sk-award-mgmt-select:focus {
+  outline: none;
+  border-color: var(--sk-cmn-sklcss-primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.15);
+}
+
+/* View Toggle */
+.sk-award-mgmt-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.3rem;
+  border: 1px solid #e2e8f0;
+}
+
+.sk-award-mgmt-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sk-award-mgmt-view-btn:hover {
+  color: var(--sk-cmn-sklcss-primary);
+  background-color: #f0f7ff;
+}
+
+.sk-award-mgmt-view-btn.active {
+  background-color: var(--sk-cmn-sklcss-primary);
+  color: white;
+}
+
+.sk-award-mgmt-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.sk-award-mgmt-select-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4b5563;
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.sk-award-mgmt-select-all-btn:hover {
+  background-color: #f0f7ff;
+  border-color: #c7d2fe;
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-mgmt-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, var(--sk-cmn-sklcss-primary), #2a5298);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(36, 86, 166, 0.2);
+  white-space: nowrap;
+}
+
+.sk-award-mgmt-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(36, 86, 166, 0.25);
+}
+
+.sk-award-mgmt-add-btn:active {
+  transform: translateY(0);
+}
+
+/* Simple Bookmark Legend */
+.sk-award-bookmark-simple-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.sk-award-bookmark-legend-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  background-color: #f9fafb;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.sk-award-bookmark-sample {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Bulk Actions Bar */
+.sk-award-bulk-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9fafb;
+  border-radius: 12px 12px 0 0;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.sk-award-bulk-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-bulk-info-icon {
+  font-size: 1.25rem;
+}
+
+.sk-award-bulk-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sk-award-bulk-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.sk-award-bulk-archive {
+  background-color: #fff8e1;
+  color: #f57c00;
+}
+
+.sk-award-bulk-archive:hover {
+  background-color: #ffe0b2;
+  transform: translateY(-2px);
+}
+
+.sk-award-bulk-restore {
+  background-color: #e0f7fa;
+  color: #00acc1;
+}
+
+.sk-award-bulk-restore:hover {
+  background-color: #b2ebf2;
+  transform: translateY(-2px);
+}
+
+.sk-award-bulk-delete {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.sk-award-bulk-delete:hover {
+  background-color: #ffcdd2;
+  transform: translateY(-2px);
+}
+
+.sk-award-bulk-cancel {
+  background-color: #f1f3f5;
+  color: #495057;
+}
+
+.sk-award-bulk-cancel:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+}
+
+/* Empty, Loading, and No Results States */
+.sk-award-loading,
+.sk-award-empty {
+  background-color: white;
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-award-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e5e7eb;
+  border-top-color: var(--sk-cmn-sklcss-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sk-award-loading-text,
+.sk-award-empty-text {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin: 0 0 0.5rem;
+}
+
+.sk-award-empty-subtext {
+  color: #9ca3af;
+  margin: 0;
+  max-width: 500px;
+}
+
+.sk-award-empty-icon {
+  font-size: 3.5rem;
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
+}
+
+/* Pagination Controls */
+.sk-award-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.sk-award-pagination-info {
+  margin-right: auto;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.sk-award-pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sk-award-pagination-btn:hover:not(.active, .disabled) {
+  background-color: #f0f7ff;
+  border-color: #c7d2fe;
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-pagination-btn.active {
+  background-color: var(--sk-cmn-sklcss-primary);
+  color: white;
+  border-color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sk-award-per-page {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.sk-award-per-page-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.sk-award-per-page-select {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  background-color: #ffffff;
+  color: #4b5563;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sk-award-mgmt-header {
+    padding: 1.5rem;
+  }
+  
+  .sk-award-mgmt-title {
+    font-size: 1.75rem;
+  }
+  
+  .sk-award-mgmt-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .sk-award-mgmt-action-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .sk-award-mgmt-select-all-btn,
+  .sk-award-mgmt-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .sk-award-bulk-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sk-award-bulk-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .sk-award-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+  }
+  
+  .sk-award-pagination-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sk-award-per-page {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Audit Trail Button */
+.sk-cmn-sklcss-award-audit-trail-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, #4a5568, #718096);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(74, 85, 104, 0.2);
+  white-space: nowrap;
+}
+
+.sk-cmn-sklcss-award-audit-trail-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(74, 85, 104, 0.25);
+}
+
+.sk-cmn-sklcss-award-audit-trail-btn:active {
+  transform: translateY(0);
+}
+
+/* Audit Trail Modal */
+.sk-cmn-sklcss-award-audit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.sk-cmn-sklcss-award-audit-modal-content {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sk-cmn-sklcss-award-audit-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sk-cmn-sklcss-award-audit-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sk-cmn-sklcss-award-audit-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.sk-cmn-sklcss-award-audit-modal-close:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Audit Filters */
+.sk-cmn-sklcss-award-audit-filters {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.sk-cmn-sklcss-award-audit-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sk-cmn-sklcss-award-audit-filter {
+  flex: 1;
+  min-width: 200px;
+}
+
+.sk-cmn-sklcss-award-audit-filter label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.sk-cmn-sklcss-award-audit-filter select,
+.sk-cmn-sklcss-award-audit-filter input[type="date"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 0.95rem;
+  color: #4b5563;
+  transition: all 0.3s ease;
+}
+
+.sk-cmn-sklcss-award-audit-filter select:focus,
+.sk-cmn-sklcss-award-audit-filter input[type="date"]:focus {
+  border-color: var(--sk-cmn-sklcss-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.15);
+}
+
+.sk-cmn-sklcss-award-audit-filter-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sk-cmn-sklcss-award-audit-filter-apply,
+.sk-cmn-sklcss-award-audit-filter-reset {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sk-cmn-sklcss-award-audit-filter-apply {
+  background-color: var(--sk-cmn-sklcss-primary);
+  color: white;
+  border: none;
+}
+
+.sk-cmn-sklcss-award-audit-filter-apply:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(36, 86, 166, 0.2);
+}
+
+.sk-cmn-sklcss-award-audit-filter-reset {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.sk-cmn-sklcss-award-audit-filter-reset:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+/* Audit Trail Content */
+.sk-cmn-sklcss-award-audit-trail-content {
+  padding: 0;
+  overflow-y: auto;
+  max-height: 60vh;
+  flex: 1;
+}
+
+.sk-cmn-sklcss-award-audit-loading {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-cmn-sklcss-award-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e5e7eb;
+  border-top-color: var(--sk-cmn-sklcss-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sk-cmn-sklcss-award-audit-empty {
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.sk-cmn-sklcss-award-audit-empty-icon {
+  font-size: 4rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.sk-cmn-sklcss-award-audit-list {
+  margin: 0;
+  padding: 0;
+}
+
+.sk-cmn-sklcss-award-audit-item {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease;
+}
+
+.sk-cmn-sklcss-award-audit-item:hover {
+  background-color: #f9fafb;
+}
+
+.sk-cmn-sklcss-award-audit-item-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #f9fafb;
+}
+
+.sk-cmn-sklcss-award-audit-action {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  min-width: 80px;
+  text-align: center;
+}
+
+.sk-cmn-sklcss-award-audit-award-title {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sk-cmn-sklcss-award-audit-timestamp {
+  color: #6b7280;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.sk-cmn-sklcss-award-audit-item-content {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sk-cmn-sklcss-award-audit-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.sk-cmn-sklcss-award-audit-user-icon {
+  color: #6b7280;
+}
+
+.sk-cmn-sklcss-award-audit-details {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.sk-cmn-sklcss-award-audit-details p {
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.sk-cmn-sklcss-award-audit-update-details,
+.sk-cmn-sklcss-award-audit-delete-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sk-cmn-sklcss-award-audit-detail-item {
+  color: #6b7280;
+  margin-left: 1.5rem;
+  display: block;
+}
+
+/* Audit Pagination */
+.sk-cmn-sklcss-award-audit-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  gap: 0.5rem;
+}
+
+.sk-cmn-sklcss-award-audit-pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sk-cmn-sklcss-award-audit-pagination-btn:hover:not(.active, .disabled) {
+  background-color: #f0f7ff;
+  border-color: #c7d2fe;
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-cmn-sklcss-award-audit-pagination-btn.active {
+  background-color: var(--sk-cmn-sklcss-primary);
+  color: white;
+  border-color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-cmn-sklcss-award-audit-pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .sk-cmn-sklcss-award-audit-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .sk-cmn-sklcss-award-audit-action {
+    width: 100%;
+  }
+  
+  .sk-cmn-sklcss-award-audit-award-title {
+    width: 100%;
+  }
+  
+  .sk-cmn-sklcss-award-audit-timestamp {
+    width: 100%;
+  }
+  
+  .sk-cmn-sklcss-award-audit-filter-buttons {
+    flex-direction: column;
+  }
+  
+  .sk-cmn-sklcss-award-audit-filter-apply,
+  .sk-cmn-sklcss-award-audit-filter-reset {
+    width: 100%;
+  }
+}

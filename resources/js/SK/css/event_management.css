@@ -1,0 +1,704 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Khand", sans-serif;
+}
+
+.header-cell {
+    flex: 1;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.em-event {
+    margin-top: 4rem;
+    margin-left: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Event Cards Section */
+.em-event-cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.em-event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Adding hover effect */
+}
+
+.em-event-card:hover {
+    transform: scale(1.05);
+    /* Slight scale on hover */
+}
+
+.em-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.em-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.em-event-card p {
+    margin: 5px 0;
+}
+
+.em-event-management-card {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.em-event-table {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.em-table-cell {
+    flex: 1;
+    padding: 70px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.em-event-table-header,
+.em-event-table-row {
+    display: flex;
+    /* Align cells horizontally */
+    width: 100%;
+    /* Ensure full width */
+}
+
+.em-header-cell {
+    flex: 1;
+    /* Distribute space equally */
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f8f9fa;
+    /* Light background for the header */
+    border-bottom: 1px solid #ddd;
+    /* Separator line */
+}
+
+.em-table-cell {
+    flex: 1;
+    /* Distribute space equally */
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    /* Row separator */
+}
+
+/* Common Status Styles */
+.em-status {
+    padding: 7px 10px;
+    /* Slightly increased top and bottom padding */
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+    line-height: 1.2;
+    /* Adjusted line height for better vertical centering */
+}
+
+/* Specific Status Colors */
+.em-status.ongoing {
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+
+.em-status.completed {
+    background-color: green;
+    color: white;
+}
+
+.em-status.upcoming {
+    background-color: rgb(176, 18, 18);
+    color: white;
+}
+
+.em-event-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Modal Styles */
+.em-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.em-modal-dialog {
+    max-width: 800px;
+    width: 100%;
+    margin: 1.75rem auto;
+}
+
+.em-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.em-modal-body {
+    padding: 20px;
+}
+
+.em-modal-body h2 {
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.em-form-group {
+    margin-bottom: 20px;
+}
+
+.em-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Input Styles - Adjusted to match KKForm */
+.em-form-group input[type="text"],
+.em-form-group input[type="datetime-local"],
+.em-form-group textarea,
+.em-form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: #000000;
+    font-family: inherit;
+}
+
+.em-form-group input[type="text"]:focus,
+.em-form-group input[type="datetime-local"]:focus,
+.em-form-group textarea:focus,
+.em-form-group select:focus {
+    outline: none;
+    border-color: #0c9fcc;
+    box-shadow: 0 0 0 3px rgba(12, 159, 204, 0.1);
+}
+
+.em-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+.em-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.em-btn-primary {
+    background-color: #0c9fcc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.em-btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.em-btn-primary:hover {
+    background-color: #5b0cda;
+}
+
+.em-btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.em-action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.em-edit-button,
+.em-delete-button {
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.em-edit-button {
+    color: rgba(0, 134, 22, 0.513)
+}
+
+.em-delete-button {
+    color: rgb(192, 5, 5)
+}
+
+.em-flex {
+    display: flex;
+    gap: 8px;
+}
+
+.em-space-x-2>*+* {
+    margin-left: 0.5rem;
+}
+
+/* Updated action button styles */
+.em-flex button {
+    padding: 6px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.em-flex button:hover {
+    background: #f8fafc;
+}
+
+/* Style for the Pencil icon */
+.em-flex button svg[data-icon="pencil"] {
+    color: #3b82f6;
+    /* Blue color */
+    width: 16px;
+    height: 16px;
+}
+
+/* Style for the Trash icon */
+.em-flex button svg[data-icon="trash-2"] {
+    color: #ef4444;
+    /* Red color */
+    width: 16px;
+    height: 16px;
+}
+
+
+@media (max-width: 768px) {
+    .em-event {
+        margin-left: 0;
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .em-event-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .em-event-card {
+        width: auto;
+    }
+
+    .em-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .em-title {
+        font-size: 1rem;
+    }
+
+    .em-event-table {
+        width: 90%;
+    }
+
+    .em-header-cell,
+    .em-table-cell {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .em-event-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .em-modal-content {
+        width: 90%;
+    }
+}
+
+/* Add this to your event_management.css file */
+
+.em-description-indicator {
+    cursor: pointer;
+    position: relative;
+}
+
+.em-has-description {
+    display: inline-block;
+    background-color: #e1f5fe;
+    color: #0288d1;
+    font-size: 0.85rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    border: 1px solid #b3e5fc;
+}
+
+/* Tooltip style for showing description preview on hover */
+.em-description-indicator:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    width: 250px;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 100px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* Add these styles to your event_management.css file */
+
+/* User Info Section */
+.em-user-info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.em-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.em-user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #0c9fcc;
+    color: rgb(122, 122, 122);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.em-user-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(122, 122, 122);
+    font-weight: 500;
+}
+
+/* Barangay Filter Styles */
+.em-filter-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.em-category-dropdown-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.em-category-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+    width: 200px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+.em-dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6c757d;
+}
+
+.em-barangay-indicator {
+    margin-left: auto;
+}
+
+.em-badge {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.em-bg-primary {
+    background-color: #0c9fcc;
+    color: white;
+}
+
+/* Empty table message */
+.em-empty-message {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    padding: 20px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .em-user-info-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .em-filter-wrapper,
+    .em-barangay-indicator {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .em-event-table-header,
+    .em-event-table-row {
+        font-size: 0.8rem;
+    }
+}
+
+/* Table Wrapper with Gradient Background */
+.em-table-wrapper {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Update pagination styles to match the new design */
+.em-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.em-pagination-button {
+    padding: 0.5rem 1.5rem;
+    background-color: #0c9fcc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.em-pagination-button:hover {
+    background-color: #0a8ab3;
+}
+
+.em-pagination-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.em-pagination-info {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Tab Styles */
+.em-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.em-tab-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #64748b;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.em-tab-button:hover {
+    color: #0c9fcc;
+}
+
+.em-tab-button.active {
+    color: #0c9fcc;
+}
+
+.em-tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0c9fcc;
+}
+
+.em-registered-attendees {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Filter Controls Styles */
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.filter-dropdown label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.filter-dropdown select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.filter-dropdown select:focus {
+    outline: none;
+    border-color: #0c9fcc;
+    box-shadow: 0 0 0 2px rgba(12, 159, 204, 0.1);
+}
+
+.filter-dropdown svg {
+    color: #0c9fcc;
+}
+
+/* Responsive adjustments for filters */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-dropdown {
+        max-width: 100%;
+    }
+}

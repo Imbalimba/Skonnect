@@ -1,0 +1,375 @@
+/* DirectoryForm.css - Styled after TemplateForm component */
+.sk-dir-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 1rem;
+  animation: sk-dir-form-fade-in 0.3s ease;
+}
+
+@keyframes sk-dir-form-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sk-dir-form-container {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 850px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: sk-dir-form-slide-up 0.3s ease;
+}
+
+@keyframes sk-dir-form-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sk-dir-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sk-dir-form-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sk-dir-form-icon {
+  color: var(--sk-cmn-sklcss-primary);
+  font-size: 1.5rem;
+}
+
+.sk-dir-form-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.sk-dir-form-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.sk-dir-form-close:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.sk-dir-form {
+  width: 100%;
+}
+
+.sk-dir-form-body {
+  padding: 1.5rem;
+}
+
+.sk-dir-form-tabs {
+  margin-bottom: 1.5rem;
+}
+
+.sk-dir-form-tab-header {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.sk-dir-form-tab {
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sk-dir-form-tab.active {
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-dir-form-tab:hover {
+  background-color: #f9f9f9;
+}
+
+.sk-dir-form-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-dir-form-tab-content {
+  position: relative;
+}
+
+.sk-dir-form-tab-pane {
+  display: none;
+  animation: sk-dir-form-fade-in 0.3s;
+}
+
+.sk-dir-form-tab-pane.active {
+  display: block;
+}
+
+.sk-dir-form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .sk-dir-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.sk-dir-form-group {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 1.25rem;
+}
+
+.sk-dir-form-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.sk-dir-form-input,
+.sk-dir-form-select,
+.sk-dir-form-textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.sk-dir-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.sk-dir-form-input:focus,
+.sk-dir-form-select:focus,
+.sk-dir-form-textarea:focus {
+  outline: none;
+  border-color: var(--sk-cmn-sklcss-primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.15);
+}
+
+.sk-dir-form-input-error,
+.sk-dir-form-select.sk-dir-form-input-error,
+.sk-dir-form-textarea.sk-dir-form-input-error {
+  border-color: #ef4444;
+}
+
+.sk-dir-form-input-error:focus,
+.sk-dir-form-select.sk-dir-form-input-error:focus,
+.sk-dir-form-textarea.sk-dir-form-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.sk-dir-form-error {
+  font-size: 0.85rem;
+  color: #ef4444;
+  margin-top: 0.5rem;
+}
+
+.sk-dir-form-help {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.sk-dir-form-section-title {
+  font-size: 1.25rem;
+  color: #2456a6;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.sk-dir-form-section-desc {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.sk-dir-form-organization-info {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.sk-dir-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .sk-dir-form-footer {
+    flex-direction: column;
+  }
+}
+
+.sk-dir-form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sk-dir-form-btn-cancel {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.sk-dir-form-btn-cancel:hover {
+  background-color: #e5e7eb;
+}
+
+.sk-dir-form-btn-save {
+  background: linear-gradient(to right, var(--sk-cmn-sklcss-primary), #2a5298);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(36, 86, 166, 0.2);
+}
+
+.sk-dir-form-btn-save:hover {
+  box-shadow: 0 6px 12px rgba(36, 86, 166, 0.25);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .sk-dir-form-btn {
+    width: 100%;
+  }
+}
+
+/* Profile image styles (if needed later) */
+.sk-dir-form-profile-preview {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sk-dir-form-profile-image-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #f0f2f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sk-dir-form-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sk-dir-form-profile-remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(231, 76, 60, 0.9);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+
+.sk-dir-form-profile-remove-btn:hover {
+  background-color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.sk-dir-form-file-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: #f0f7ff;
+  border: 1px solid #d1e6ff;
+  color: var(--sk-cmn-sklcss-primary);
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sk-dir-form-file-upload:hover {
+  background-color: #e1f0ff;
+  transform: translateY(-2px);
+}

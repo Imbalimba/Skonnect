@@ -1,0 +1,334 @@
+/* AwardTable.css - Updated with video support and removed view count */
+.sk-award-table-container {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.sk-award-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.sk-award-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sk-award-table th {
+  background-color: #f5f7fa;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #eaeaea;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.sk-award-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.sk-award-row {
+  transition: background-color 0.2s;
+}
+
+.sk-award-row:hover {
+  background-color: #f9fafc;
+}
+
+.sk-award-row-archived {
+  background-color: #f8f8f8;
+  color: #777;
+}
+
+.sk-award-row-archived:hover {
+  background-color: #f0f0f0;
+}
+
+/* Selected row styling */
+.sk-award-row-selected {
+  background-color: rgba(36, 86, 166, 0.08) !important;
+}
+
+.sk-award-row-selected:hover {
+  background-color: rgba(36, 86, 166, 0.12) !important;
+}
+
+.sk-award-checkbox-col {
+  width: 40px;
+  text-align: center;
+}
+
+.sk-award-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  transition: all 0.2s;
+}
+
+.sk-award-checkbox:hover .sk-award-checkbox-icon {
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-checkbox-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sk-award-checkbox-icon {
+  font-size: 1.25rem;
+  color: #aaa;
+  transition: all 0.2s;
+}
+
+.sk-award-checkbox-icon.checked {
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-image-col {
+  width: 80px;
+}
+
+.sk-award-thumbnail {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.sk-award-bookmark-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 0 0 0 4px;
+}
+
+.sk-award-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video indicator for thumbnails */
+.sk-award-video-indicator-small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0 4px 0 0;
+}
+
+.sk-award-title-block {
+  max-width: 250px;
+}
+
+.sk-award-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.sk-award-description {
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sk-award-category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sk-award-category-leadership {
+  background-color: #e3f2fd;
+  color: #0366d6;
+}
+
+.sk-award-category-innovation {
+  background-color: #e1f5fe;
+  color: #0288d1;
+}
+
+.sk-award-category-service {
+  background-color: #e1f5ea;
+  color: #2da771;
+}
+
+.sk-award-category-environment {
+  background-color: #e8f5e9;
+  color: #43a047;
+}
+
+.sk-award-category-education {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.sk-award-category-arts {
+  background-color: #f5e8ff;
+  color: #865ddc;
+}
+
+.sk-award-category-sports {
+  background-color: #ffe0e0;
+  color: #d32f2f;
+}
+
+.sk-award-category-technology {
+  background-color: #e8eaf6;
+  color: #3f51b5;
+}
+
+.sk-award-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sk-award-status-published {
+  background-color: #e3fcef;
+  color: #0ca678;
+}
+
+.sk-award-status-archived {
+  background-color: #f1f3f5;
+  color: #868e96;
+}
+
+.sk-award-creator {
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-award-creator-name {
+  font-weight: 600;
+  color: #444;
+}
+
+.sk-award-creator-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.sk-award-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sk-award-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.sk-award-btn:hover {
+  transform: translateY(-2px);
+}
+
+.sk-award-btn-view {
+  background-color: #fff9db;
+  color: #f59f00;
+}
+
+.sk-award-btn-view:hover {
+  background-color: #ffec99;
+}
+
+.sk-award-btn-edit {
+  background-color: #e3f2fd;
+  color: #0366d6;
+}
+
+.sk-award-btn-edit:hover {
+  background-color: #bbdefb;
+}
+
+.sk-award-btn-archive {
+  background-color: #fff8e1;
+  color: #f57c00;
+}
+
+.sk-award-btn-archive:hover {
+  background-color: #ffe0b2;
+}
+
+.sk-award-btn-restore {
+  background-color: #e0f7fa;
+  color: #00acc1;
+}
+
+.sk-award-btn-restore:hover {
+  background-color: #b2ebf2;
+}
+
+.sk-award-btn-delete {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.sk-award-btn-delete:hover {
+  background-color: #ffcdd2;
+}
+
+.sk-award-no-permission {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #999;
+  font-size: 0.85rem;
+  background-color: #f1f3f5;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+}
+
+.sk-award-table-footer {
+  padding: 1rem;
+  background-color: #f9fafc;
+  border-top: 1px solid #eaeaea;
+  font-size: 0.9rem;
+  color: #666;
+}

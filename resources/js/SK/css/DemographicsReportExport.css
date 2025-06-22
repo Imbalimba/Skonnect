@@ -1,0 +1,414 @@
+/* DemographicsReportExport.css */
+
+/* Main container styling */
+.demographics-report-export {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+.report-export-header {
+  margin-bottom: 15px;
+}
+
+.report-export-header h3 {
+  font-size: 18px;
+  color: #50606C;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.report-export-header p {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Button styling */
+.export-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-export-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #50606C !important;
+  border-color: #50606C !important;
+  color: white;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.main-export-btn:hover {
+  background-color: #3a4b58 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-left {
+  margin-right: 8px;
+}
+
+.quick-export-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.export-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #dee2e6;
+  color: #50606C !important;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.export-option:hover {
+  background-color: #f1f1f1;
+  border-color: #50606C;
+  color: #50606C !important;
+}
+
+.export-icon {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+/* Modal styling */
+.report-modal .nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+}
+
+.report-modal .nav-tabs .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+  padding: 10px 15px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.report-modal .nav-tabs .nav-link.active {
+  color: #50606C;
+  border-bottom: 3px solid #50606C;
+  background-color: transparent;
+}
+
+.report-modal .nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid #dee2e6;
+}
+
+.report-modal .nav-tabs .nav-link svg {
+  margin-right: 5px;
+}
+
+/* Template selection cards */
+.template-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.template-card {
+  flex: 1 1 calc(50% - 15px);
+  min-width: 200px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #dee2e6;
+}
+
+.template-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.template-card.active {
+  border: 2px solid #50606C;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.template-card .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #50606C;
+}
+
+.template-card .card-text {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* Chart and table selection */
+.content-toggle-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.chart-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Filter styling */
+.date-range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-range-separator {
+  font-weight: 500;
+}
+
+.advanced-filters-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.filter-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.filter-checkboxes.scrollable {
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.filter-summary {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.filter-summary-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.filter-category {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Color theme options */
+.color-theme-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.color-theme {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.color-theme:hover {
+  background-color: #f1f1f1;
+}
+
+.color-theme.active {
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-sample {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 auto 5px auto;
+}
+
+/* Print styles - hide UI elements when printing */
+@media print {
+  /* Hide UI elements not needed for printing */
+  .demographics-report-export,
+  nav,
+  header,
+  footer,
+  .sidebar,
+  button:not(.print-include) {
+    display: none !important;
+  }
+
+  /* Ensure the page breaks appropriately */
+  .chart-box {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    clear: both;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Make containers full width for print */
+  .container, 
+  .container-fluid,
+  .row {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Fix chart layouts for printing */
+  .chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  /* Size charts appropriately */
+  .chart-container {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Ensure canvas elements render correctly */
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Add a print-specific header */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Handle tables in print view */
+  table {
+    width: 100% !important;
+    page-break-inside: auto;
+  }
+  
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  th, td {
+    page-break-inside: avoid;
+  }
+  
+  /* Add more whitespace between sections */
+  .print-section {
+    margin-bottom: 30px;
+    page-break-after: always;
+  }
+  
+  /* Ensure text is readable when printed */
+  body {
+    font-size: 12pt;
+    color: black;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .template-card {
+    flex: 1 1 100%;
+  }
+  
+  .main-export-btn,
+  .export-option {
+    width: 100%;
+  }
+  
+  .export-actions {
+    flex-direction: column;
+  }
+  
+  .date-range-inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .date-range-separator {
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .color-theme-options {
+    flex-wrap: wrap;
+  }
+  
+  .filter-checkboxes {
+    grid-template-columns: 1fr;
+  }
+}
+ .modal-content {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.report-modal .modal-header {
+  background-color: #50606C;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  padding: 15px 20px;
+}
+
+.report-modal .modal-title {
+  font-weight: 500;
+}
+
+.report-modal .modal-body {
+  padding: 20px;
+}
+
+.report-modal .modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding: 15px 20px;
+}
+
+.report-modal .close {
+  color: white;
+}
+
+/* Tabs styling */
+.report-modal .nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 20px;
+}
+
+.report-modal .nav-tabs .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+  padding: 10px 15px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}

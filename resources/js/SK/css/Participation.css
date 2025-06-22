@@ -1,0 +1,809 @@
+/* PARTICIPATION MODERN UI - SCOPED CLASSES */
+
+.participation-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.participation-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.participation-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+.participation-subtitle {
+  color: #5c6bc0;
+  font-size: 1.1rem;
+}
+
+.participation-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.participation-tab {
+  background: #f5f7fa;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 28px;
+  font-size: 1rem;
+  color: #3949ab;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.participation-tab.active {
+  background: #3949ab;
+  color: #fff;
+  font-weight: 600;
+}
+
+.participation-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  background: #f5f7fa;
+  padding: 18px 18px 8px 18px;
+  border-radius: 12px;
+}
+.participation-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+.participation-select-wrapper {
+  position: relative;
+}
+.participation-select {
+  width: 100%;
+  padding: 8px 32px 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #c5cae9;
+  background: #fff;
+  font-size: 1rem;
+  color: #3949ab;
+  appearance: none;
+}
+.participation-dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7986cb;
+  pointer-events: none;
+}
+.participation-filter-toggle-btn {
+  background: #e8eaf6;
+  color: #3949ab;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.participation-filter-toggle-btn.active {
+  background: #3949ab;
+  color: #fff;
+}
+
+.participation-advanced-filters {
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+.participation-date-filters {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+}
+.participation-date-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.participation-date-input {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #c5cae9;
+  font-size: 1rem;
+}
+.participation-apply-filter-btn, .participation-clear-filter-btn {
+  background: #3949ab;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.participation-clear-filter-btn {
+  background: #e57373;
+}
+.participation-apply-filter-btn:hover, .participation-clear-filter-btn:hover {
+  opacity: 0.9;
+}
+
+.participation-main-content {
+  margin-top: 24px;
+}
+
+/* Cards and Stats */
+.participation-card, .event-details, .program-details, .user-history-container {
+  background: #f5f7fa;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(60,60,120,0.06);
+  padding: 28px 24px;
+  margin-bottom: 28px;
+}
+.participation-dashboard-stats,
+.participation-stats-section {
+  display: flex;
+  gap: 32px;
+  margin: 18px 0 24px 0;
+  flex-wrap: wrap;
+}
+.participation-stat-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3e9f7 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(60,60,120,0.10), 0 1.5px 6px rgba(60,60,120,0.07);
+  padding: 28px 24px 20px 24px;
+  min-width: 140px;
+  text-align: center;
+  flex: 1 1 120px;
+  transition: box-shadow 0.22s, transform 0.18s, background 0.22s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.participation-stat-card:hover {
+  box-shadow: 0 8px 32px rgba(60, 60, 120, 0.18), 0 2px 8px rgba(60, 60, 120, 0.10);
+  transform: translateY(-4px) scale(1.03);
+  background: linear-gradient(135deg, #e3e9f7 0%, #f5f7fa 100%);
+}
+.participation-stat-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #283593;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.01em;
+}
+.participation-stat-label {
+  color: #3949ab;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+
+/* Table Styles */
+.participation-table, .participation-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.participation-table-wrapper {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(60,60,120,0.07);
+  padding: 0 0 12px 0;
+  margin-bottom: 18px;
+}
+.participation-table th, .participation-table-wrapper th {
+  background: #e8eaf6;
+  color: #3949ab;
+  font-weight: 600;
+  padding: 12px 8px;
+  border-bottom: 2px solid #c5cae9;
+}
+.participation-table td, .participation-table-wrapper td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+}
+.participation-table tr:last-child td, .participation-table-wrapper tr:last-child td {
+  border-bottom: none;
+}
+
+/* Buttons */
+.participation-btn, .participation-export-btn, .participation-search-btn, .participation-tab, .export-btn {
+  background: linear-gradient(90deg, #3949ab 0%, #1976d2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.10);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.22s, box-shadow 0.22s, transform 0.18s, color 0.18s;
+}
+
+.participation-btn:hover, .participation-export-btn:hover, .participation-search-btn:hover, .participation-tab:hover, .export-btn:hover {
+  background: linear-gradient(90deg, #283593 0%, #1565c0 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(60,60,120,0.16);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Active tab style override */
+.participation-tab.active {
+  background: linear-gradient(90deg, #1976d2 0%, #3949ab 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.13);
+}
+
+/* Search */
+.participation-search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.participation-search-container .participation-search-input-wrapper {
+  position: relative;
+  width: 260px;
+}
+.participation-search-container .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7986cb;
+}
+.participation-search-container input[type="text"], 
+.participation-search-container .participation-search-input {
+  width: 100%;
+  padding: 8px 12px 8px 34px;
+  border-radius: 6px;
+  border: 1px solid #c5cae9;
+  font-size: 1rem;
+  background: #fff;
+}
+.participation-search-container .clear-search {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #e57373;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Tabs for attendees */
+.participation-attendees-tabs, .participation-history-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 12px 0;
+}
+.participation-attendee-tab, .participation-history-tab {
+  background: #e8eaf6;
+  color: #3949ab;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.participation-attendee-tab.active, .participation-history-tab.active {
+  background: #3949ab;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Badges */
+.participation-status-badge, .participation-volunteer-badge, .participation-attendance-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  margin-right: 4px;
+}
+.participation-status-badge.registered, .participation-attendance-badge.yes {
+  background: #c8e6c9;
+  color: #388e3c;
+}
+.participation-status-badge.attending {
+  background: #b3e5fc;
+  color: #0288d1;
+}
+.participation-status-badge.declined, .participation-attendance-badge.no {
+  background: #ffcdd2;
+  color: #d32f2f;
+}
+.participation-status-badge.maybe {
+  background: #fff9c4;
+  color: #fbc02d;
+}
+.participation-volunteer-badge.yes {
+  background: #ffe082;
+  color: #ff6f00;
+}
+.participation-volunteer-badge.no {
+  background: #e0e0e0;
+  color: #757575;
+}
+
+/* Card grids */
+.participation-events-grid, .participation-programs-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.participation-event-card, .participation-program-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3e9f7 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(60,60,120,0.13), 0 1.5px 6px rgba(60,60,120,0.07);
+  padding: 28px 24px 20px 24px;
+  min-width: 220px;
+  flex: 1 1 260px;
+  cursor: pointer;
+  transition: box-shadow 0.22s, transform 0.18s, border-color 0.18s, background 0.22s;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 6px solid #3949ab;
+  position: relative;
+  overflow: hidden;
+}
+.participation-event-card:hover, .participation-program-card:hover {
+  box-shadow: 0 8px 32px rgba(60, 60, 120, 0.18), 0 2px 8px rgba(60, 60, 120, 0.10);
+  transform: translateY(-4px) scale(1.03);
+  background: linear-gradient(135deg, #e3e9f7 0%, #f5f7fa 100%);
+  border-left: 6px solid #1976d2;
+}
+.participation-event-card h5, .participation-program-card h5 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #3949ab;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.01em;
+}
+.participation-event-date, .participation-event-date {
+  color: #7986cb;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+.participation-event-location, .participation-event-location {
+  color: #5c6bc0;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+}
+.participation-event-footer, .participation-event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.97rem;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+  gap: 10px;
+}
+.event-barangay, .participation-event-barangay {
+  font-weight: 600;
+  color: #3949ab;
+  background: #e3f2fd;
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: 0.95rem;
+  margin-right: 8px;
+  display: inline-block;
+}
+.attendance-rate, .participation-attendance-rate {
+  color: #388e3c;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #e8f5e9;
+  border-radius: 6px;
+  padding: 2px 10px;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .participation-container {
+    padding: 18px 4px;
+  }
+  .participation-events-grid, .participation-programs-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .participation-stats-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .participation-dashboard-stats,
+  .participation-stats-section,
+  .participation-event-stats-section,
+  .participation-events-grid,
+  .participation-programs-grid,
+  .charts-section,
+  .participation-charts-section {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+@media (max-width: 600px) {
+  .participation-header {
+    padding: 0 2px;
+  }
+  .participation-tabs {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .participation-filters {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 6px 4px 6px;
+  }
+  .participation-main-content {
+    margin-top: 10px;
+  }
+  .participation-stat-card,
+  .participation-event-card,
+  .participation-program-card,
+  .event-details,
+  .program-details,
+  .user-history-container,
+  .participation-recent-events-section,
+  .participation-top-programs-section,
+  .participation-user-search-section,
+  .participation-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px 6px !important;
+    margin-bottom: 12px !important;
+  }
+  .participation-dashboard-stats,
+  .participation-stats-section,
+  .participation-event-stats-section {
+    gap: 10px !important;
+  }
+  .participation-table-wrapper,
+  .participation-table {
+    overflow-x: auto;
+    display: block;
+  }
+  .participation-table th,
+  .participation-table td,
+  .participation-table-wrapper th,
+  .participation-table-wrapper td {
+    padding: 8px 4px;
+    font-size: 0.95rem;
+  }
+  .participation-search-container,
+  .participation-search-input-wrapper {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+  .participation-search-container input[type="text"],
+  .participation-search-input {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .participation-btn,
+  .participation-export-btn,
+  .participation-search-btn,
+  .participation-apply-filter-btn,
+  .participation-clear-filter-btn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+  }
+  .charts-section,
+  .participation-charts-section {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+/* Add spacing (gap) between event (and program) meta items so that "Date: ..." etc. don't wrap */
+.participation-event-meta, .participation-program-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* (or your desired spacing) */
+  margin: 10px 0; /* (optional extra margin) */
+}
+
+.participation-event-meta-item, .participation-program-meta span {
+  display: inline-flex;
+  align-items: center; /* (optional, if you want vertical centering) */
+  white-space: nowrap; /* (so that "Date: ..." etc. don't wrap) */
+}
+
+.participation-event-meta-item strong, .participation-program-meta span strong {
+  margin-right: 5px; /* (optional extra space between label and value) */
+}
+
+.participation-role-header {
+  background: #e8eaf6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #3949ab;
+}
+
+.participation-role-info {
+  color: #1a237e;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.participation-user-search-section {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.06);
+}
+
+.participation-user-search-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3949ab;
+  margin-bottom: 16px;
+}
+
+.participation-user-search-section .participation-search-container {
+  margin-bottom: 16px;
+}
+
+.participation-user-search-section .search-loading {
+  color: #3949ab;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.participation-user-search-section .participation-table-wrapper {
+  margin-top: 10px;
+}
+
+.participation-user-search-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.participation-user-search-section th,
+.participation-user-search-section td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.participation-user-search-section th {
+  background: #e8eaf6;
+  color: #3949ab;
+  font-weight: 600;
+}
+
+.participation-user-search-section .no-results {
+  text-align: center;
+  color: #e57373;
+  font-style: italic;
+}
+
+.participation-stat-card-events {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%) !important;
+}
+.participation-stat-card-programs {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%) !important;
+}
+.participation-stat-card-attendance {
+  background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%) !important;
+}
+.participation-stat-card-volunteer {
+  background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%) !important;
+}
+
+.participation-event-stats-section {
+  display: flex;
+  gap: 32px;
+  margin: 18px 0 24px 0;
+  flex-wrap: wrap;
+}
+
+.participation-event-stats-section .participation-stat-card {
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(60,60,120,0.07);
+  padding: 18px 22px;
+  min-width: 140px;
+  text-align: center;
+  flex: 1 1 120px;
+  background: #ffffff0e;
+}
+
+.participation-event-stats-section .participation-stat-card-events {
+  background: #e3f2fd !important;
+}
+.participation-event-stats-section .participation-stat-card-programs {
+  background: #fce4ec !important;
+}
+.participation-event-stats-section .participation-stat-card-attendance {
+  background: #e8f5e9 !important;
+}
+.participation-event-stats-section .participation-stat-card-volunteer {
+  background: #fffde7 !important;
+}
+
+.participation-recent-events-section,
+.participation-top-programs-section {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.06);
+}
+
+/* Add padding (or gap) between "Registration Status" and "Attendance Rate" chart containers */
+.participation-charts-section .chart-container {
+  margin-bottom: 24px; /* (or your desired gap) */
+}
+
+/* Enhance "Export CSV" button design so it's obviously clickable */
+.participation-export-btn, .export-btn {
+  cursor: pointer;
+  transition: box-shadow 0.22s, transform 0.18s, background 0.18s, border-color 0.18s;
+}
+
+.participation-export-btn:hover, .export-btn:hover {
+  box-shadow: 0 4px 12px rgba(60, 60, 120, 0.18), 0 1px 4px rgba(60, 60, 120, 0.10);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Add this to your Participation.css file */
+
+/* Add spacing between charts and search section in event view */
+.event-details .charts-section {
+  display: flex;
+  gap: 24px; /* Space between charts */
+  margin-bottom: 24px; /* Space below charts */
+}
+
+/* Add spacing between search section and tabs */
+.event-details .search-export-section {
+  margin-bottom: 24px;
+}
+
+/* If you want individual spacing around each chart container */
+.event-details .chart-container {
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex: 1;
+}
+
+/* Ensure the search section has proper spacing */
+.event-details .participation-search-container {
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.search-export-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .search-export-section {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+}
+
+.action-btn.history-btn {
+  background: linear-gradient(135deg, #3949ab 0%, #1976d2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.10);
+  transition: background 0.22s, box-shadow 0.22s, transform 0.18s;
+  cursor: pointer;
+  outline: none;
+}
+
+.action-btn.history-btn:hover, .action-btn.history-btn:focus {
+  background: linear-gradient(135deg, #283593 0%, #1565c0 100%);
+  box-shadow: 0 4px 16px rgba(60,60,120,0.16);
+  transform: translateY(-2px) scale(1.08);
+}
+
+.participation-dashboard-header {
+  background: linear-gradient(90deg, #e3e9f7 0%, #f5f7fa 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(60,60,120,0.10);
+  padding: 28px 32px 18px 32px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.participation-dashboard-header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #283593;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.history-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 12px 0;
+}
+.history-tab {
+  background: linear-gradient(90deg, #e3e9f7 0%, #f5f7fa 100%);
+  color: #3949ab;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 28px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.22s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.06);
+  outline: none;
+}
+.history-tab:hover {
+  background: linear-gradient(90deg, #d1d9f7 0%, #e3e9f7 100%);
+  color: #283593;
+  box-shadow: 0 4px 16px rgba(60,60,120,0.13);
+}
+.history-tab.active {
+  background: linear-gradient(90deg, #3949ab 0%, #1976d2 100%);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.13);
+}
+
+.top-programs-section {
+  margin-top: 36px;
+}
+

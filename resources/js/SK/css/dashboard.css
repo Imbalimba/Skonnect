@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Khand", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+}
+
+.dashboard {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: calc(100vh - 60px);
+    background-color: #f5f6fa;
+}
+
+.dashboard-header h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.dashboard-sidebar {
+    width: 350px;
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* Stat Cards */
+.stat-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 24px;
+}
+
+.stat-card {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: inherit;
+    position: relative;
+}
+
+.stat-card-content {
+    padding: 24px 24px 12px;
+    text-align: left;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-card-number {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.stat-card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: white;
+    opacity: 0.9;
+}
+
+.stat-card-more-info-wrapper {
+    width: 100%;
+    margin-top: auto;
+    background: rgba(0,0,0,0.07);
+    display: flex;
+    align-items: stretch;
+}
+
+.stat-card-more-info {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    background: rgba(0,0,0,0.10);
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0 0 4px 4px;
+    transition: background 0.2s;
+}
+
+.stat-card-more-info:hover {
+    background: rgba(0,0,0,0.18);
+    color: #fff;
+}
+
+.stat-card-more-info-icon {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+/* Card Colors */
+.teal-card {
+    background-color: #17a2b8;
+}
+
+.green-card {
+    background-color: #28a745;
+}
+
+.pink-card {
+    background-color: #d63384;
+}
+
+.red-card {
+    background-color: #dc3545;
+}
+
+/* Announcement Section */
+.announcement-section {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Calendar Controls */
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-nav-btn, .today-btn, .month-btn {
+    border: none;
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    margin-right: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+}
+
+.today-btn {
+    background-color: #4299e1;
+    color: white;
+}
+
+.month-btn {
+    background-color: #2b6cb0;
+    color: white;
+    margin-left: auto;
+}
+
+.calendar-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 15px;
+    flex-grow: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .dashboard-sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+    }
+    
+    .stat-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        margin-left: 0;
+        margin-top: 60px;
+    }
+    
+    .stat-cards-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .stat-card-content {
+        padding: 20px 20px 10px;
+    }
+    
+    .stat-card-number {
+        font-size: 36px;
+    }
+    
+    .stat-card-title {
+        font-size: 16px;
+    }
+}
+
+.stat-card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.stat-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    opacity: 0.25;
+    margin-left: 15px;
+    height: 100%;
+}

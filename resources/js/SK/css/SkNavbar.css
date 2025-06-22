@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+
+/* Unique SK Navigation styles to avoid conflicts */
+.sk-nav-sklcss-container {
+    width: 250px;
+    background: linear-gradient(to bottom, #1E3C72, #2A5298, #8E44AD, #E74C3C);
+    color: white;
+    font-family: "Khand", sans-serif;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 100;
+    overflow: hidden; /* Hide overflow from container */
+}
+
+/* User profile section styling */
+.sk-nav-sklcss-user-profile {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.sk-nav-sklcss-user-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-right: 12px;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.sk-nav-sklcss-user-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.sk-nav-sklcss-user-name {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.sk-nav-sklcss-user-role {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sk-nav-sklcss-scrollable {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 0 30px 30px;
+    /* Custom scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.sk-nav-sklcss-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sk-nav-sklcss-scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sk-nav-sklcss-scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+}
+
+.sk-nav-sklcss-hidden {
+    transform: translateX(-100%);
+}
+
+.sk-nav-sklcss-header {
+    display: flex;
+    align-items: center;
+    padding: 30px 30px 20px;
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 2;
+}
+
+.sk-nav-sklcss-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.sk-nav-sklcss-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sk-nav-sklcss-section {
+    margin-top: 20px;
+    position: relative;
+}
+
+.sk-nav-sklcss-section-title {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.sk-nav-sklcss-item {
+    margin: 8px 0;
+}
+
+.sk-nav-sklcss-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sk-nav-sklcss-link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+    border-radius: 12px;
+}
+
+.sk-nav-sklcss-link:hover:before,
+.sk-nav-sklcss-link.active:before {
+    width: 100%;
+}
+
+.sk-nav-sklcss-link:hover,
+.sk-nav-sklcss-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: bold;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sk-nav-sklcss-icon {
+    margin-right: 12px;
+    font-size: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+
+.sk-nav-sklcss-text {
+    font-size: 1.05em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Toggle button for mobile */
+.sk-nav-sklcss-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1002;
+    background: #1E3C72;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.sk-nav-sklcss-toggle:hover {
+    background: #2A5298;
+    transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sk-nav-sklcss-container {
+        width: 80px;
+    }
+
+    .sk-nav-sklcss-scrollable {
+        padding: 0 15px 20px;
+    }
+
+    .sk-nav-sklcss-title,
+    .sk-nav-sklcss-section-title,
+    .sk-nav-sklcss-text {
+        display: none;
+    }
+
+    .sk-nav-sklcss-header {
+        justify-content: center;
+        padding: 20px 15px;
+    }
+
+    .sk-nav-sklcss-link {
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    .sk-nav-sklcss-icon {
+        margin-right: 0;
+        font-size: 1.5em;
+    }
+
+    .sk-nav-sklcss-item {
+        text-align: center;
+    }
+    
+    .sk-nav-sklcss-toggle {
+        display: block;
+    }
+    
+    .sk-nav-sklcss-container.sk-nav-sklcss-hidden {
+        transform: translateX(-100%);
+    }
+    
+    /* Mobile adjustments for user profile */
+    .sk-nav-sklcss-user-profile {
+        flex-direction: column;
+        padding: 10px 0;
+        margin: 0 5px 10px;
+    }
+    
+    .sk-nav-sklcss-user-avatar {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .sk-nav-sklcss-user-info {
+        text-align: center;
+    }
+    
+    .sk-nav-sklcss-user-name,
+    .sk-nav-sklcss-user-role {
+        display: none;
+    }
+}
+
+/* Dropdown styles - Significantly improved */
+.sk-nav-sklcss-dropdown {
+    position: relative;
+}
+
+.sk-nav-sklcss-dropdown-arrow {
+    margin-left: auto;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.sk-nav-sklcss-dropdown-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+.sk-nav-sklcss-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    margin: 0 0 0 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.sk-nav-sklcss-dropdown-menu.open {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.sk-nav-sklcss-dropdown-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin: 6px 0;
+    position: relative;
+    overflow: hidden;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sk-nav-sklcss-dropdown-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.sk-nav-sklcss-dropdown-item:hover:before,
+.sk-nav-sklcss-dropdown-item.active:before {
+    width: 100%;
+}
+
+.sk-nav-sklcss-dropdown-item:hover,
+.sk-nav-sklcss-dropdown-item.active {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+    border-left: 2px solid white;
+}
+
+.sk-nav-sklcss-dropdown-icon {
+    margin-right: 10px;
+    font-size: 1em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+    .sk-nav-sklcss-dropdown-menu {
+        margin-left: 0;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+    
+    .sk-nav-sklcss-dropdown-item {
+        justify-content: center;
+        padding: 10px 0;
+        border-left: none;
+    }
+    
+    .sk-nav-sklcss-dropdown-icon {
+        margin-right: 0;
+    }
+    
+    .sk-nav-sklcss-dropdown-item span {
+        display: none;
+    }
+}

@@ -1,0 +1,183 @@
+/* Global.css */
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --youth-primary: #2456a6;
+  --youth-primary-dark: #1a4080;
+  --youth-secondary: #d52027;
+  --youth-secondary-dark: #b31922;
+  --youth-text: #333333;
+  --youth-text-muted: #666666;
+  --youth-border: #cccccc;
+  --youth-background: #f8f9fa;
+  --youth-white: #ffffff;
+  --youth-border-radius: 4px;
+  --youth-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --youth-transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Khand", sans-serif;
+}
+
+body {
+  font-family: "Khand", sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f8f9fa;
+}
+
+/* Fix button styling */
+.youth-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  margin-top: 1rem;
+  font-family: "Khand", sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.youth-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.youth-btn:hover::after {
+  transform: translateX(100%);
+}
+
+.youth-btn-primary {
+  background-color: var(--youth-primary);
+  color: var(--youth-white);
+  box-shadow: 0 4px 6px rgba(36, 86, 166, 0.2);
+}
+
+.youth-btn-primary:hover {
+  background-color: var(--youth-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(36, 86, 166, 0.3);
+}
+
+.youth-btn-secondary {
+  background-color: var(--youth-secondary);
+  color: var(--youth-white);
+  box-shadow: 0 4px 6px rgba(213, 32, 39, 0.2);
+}
+
+.youth-btn-secondary:hover {
+  background-color: var(--youth-secondary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(213, 32, 39, 0.3);
+}
+
+/* Page structure */
+.youth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.youth-main-content {
+  flex: 1;
+}
+
+/* Generic banner styling - each page should override with specific classes */
+.youth-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--youth-white);
+  overflow: hidden;
+}
+
+.youth-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(36, 86, 166, 0.7), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+
+.youth-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.youth-banner-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.youth-banner-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Generic content wrapper - each page should override with specific classes */
+.youth-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .youth-content-wrapper {
+    padding: 2rem 1.5rem;
+  }
+  
+  .youth-banner-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .youth-banner-text {
+    font-size: 2rem;
+  }
+  
+  .youth-banner-subtitle {
+    font-size: 1rem;
+  }
+  
+  .youth-content-wrapper {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,393 @@
+/* DirectoryTable.css - Styled after TemplateTable component */
+.sk-dir-table-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.sk-dir-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.sk-dir-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sk-dir-table th {
+  background-color: #f5f7fa;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #eaeaea;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.sk-dir-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.sk-dir-row {
+  transition: background-color 0.2s;
+}
+
+.sk-dir-row:hover {
+  background-color: #f9fafc;
+}
+
+.sk-dir-row-archived {
+  background-color: #f8f8f8;
+  color: #777;
+}
+
+.sk-dir-row-archived:hover {
+  background-color: #f0f0f0;
+}
+
+.sk-dir-row-selected {
+  background-color: rgba(36, 86, 166, 0.08) !important;
+}
+
+.sk-dir-row-selected:hover {
+  background-color: rgba(36, 86, 166, 0.12) !important;
+}
+
+/* Name column with bookmark */
+.sk-dir-name-col {
+  position: relative;
+  padding-left: 1.75rem !important;
+}
+
+.sk-dir-bookmark-indicator {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-dir-bookmark-icon {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sk-dir-name {
+  font-weight: 500;
+}
+
+/* Contact info styling */
+.sk-dir-contact {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.35rem;
+}
+
+.sk-dir-contact:last-child {
+  margin-bottom: 0;
+}
+
+.sk-dir-contact-label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #666;
+  margin-right: 0.35rem;
+}
+
+.sk-dir-contact-value {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+
+.sk-dir-contact-value:hover {
+  color: var(--sk-cmn-sklcss-primary);
+  text-decoration: underline;
+}
+
+.sk-dir-no-contact {
+  color: #888;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Category badges */
+.sk-dir-category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sk-dir-category-executive {
+  background-color: #e1f0ff;
+  color: #0366d6;
+}
+
+.sk-dir-category-committee {
+  background-color: #e1f5ea;
+  color: #2da771;
+}
+
+.sk-dir-category-barangay {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.sk-dir-category-partner {
+  background-color: #f5e8ff;
+  color: #865ddc;
+}
+
+/* Status badges */
+.sk-dir-status-badge {
+  display: inline-block;
+  padding: 0.20rem 0.70rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sk-dir-status-published {
+  background-color: #e3fcef;
+  color: #0ca678;
+}
+
+.sk-dir-status-archived {
+  background-color: #f1f3f5;
+  color: #868e96;
+}
+
+/* Creator info styling */
+.sk-dir-creator {
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-dir-creator-name {
+  font-weight: 600;
+  color: #444;
+}
+
+.sk-dir-creator-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Updater info styling */
+.sk-dir-updater {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sk-dir-updater-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-dir-updater-name {
+  font-weight: 600;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.sk-dir-updater-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.sk-dir-updated-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Action buttons */
+.sk-dir-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sk-dir-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.sk-dir-btn:hover {
+  transform: translateY(-2px);
+}
+
+.sk-dir-btn-edit {
+  background-color: #e3f2fd;
+  color: #0366d6;
+}
+
+.sk-dir-btn-edit:hover {
+  background-color: #bbdefb;
+}
+
+.sk-dir-btn-archive {
+  background-color: #fff8e1;
+  color: #f57c00;
+}
+
+.sk-dir-btn-archive:hover {
+  background-color: #ffe0b2;
+}
+
+.sk-dir-btn-restore {
+  background-color: #e0f7fa;
+  color: #00acc1;
+}
+
+.sk-dir-btn-restore:hover {
+  background-color: #b2ebf2;
+}
+
+.sk-dir-btn-delete {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.sk-dir-btn-delete:hover {
+  background-color: #ffcdd2;
+}
+
+.sk-dir-no-permission {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #999;
+  font-size: 0.85rem;
+  background-color: #f1f3f5;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+}
+
+/* Empty and loading states */
+.sk-dir-empty {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.sk-dir-loading {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-dir-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--sk-cmn-sklcss-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Table footer */
+.sk-dir-table-footer {
+  padding: 1rem;
+  background-color: #f9fafc;
+  border-top: 1px solid #eaeaea;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Checkbox column */
+.sk-dir-checkbox-col {
+  width: 40px;
+  text-align: center;
+}
+
+.sk-dir-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  transition: all 0.2s;
+}
+
+.sk-dir-checkbox:hover .sk-dir-checkbox-icon {
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-dir-checkbox-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sk-dir-checkbox-icon {
+  font-size: 1.25rem;
+  color: #aaa;
+  transition: all 0.2s;
+}
+
+.sk-dir-checkbox-icon.checked {
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sk-dir-table {
+    font-size: 0.85rem;
+  }
+  
+  .sk-dir-table th,
+  .sk-dir-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .sk-dir-category-badge,
+  .sk-dir-status-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .sk-dir-actions {
+    flex-wrap: wrap;
+  }
+  
+  .sk-dir-btn {
+    width: 28px;
+    height: 28px;
+  }
+}

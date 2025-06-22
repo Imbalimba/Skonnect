@@ -1,0 +1,511 @@
+/* Policy Management Section */
+.policy-section {
+  background: linear-gradient(180deg, #D9D9D9, #737373);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Tab styling */
+.tab {
+  background-color: #000;
+  color: #00a9e0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background-color: #00a9e0;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tab:hover:not(.active) {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+/* New Policy Button */
+.new-profile-button {
+  display: flex;
+  align-items: center;
+  background-color: #0f4a6a;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.plus {
+  font-size: 18px;
+  color: white;
+}
+
+/* Search Box Styles */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-input {
+  padding-right: 40px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* Category dropdown */
+.category-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.category-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+  width: 200px;
+}
+
+.dropdown-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6c757d;
+}
+
+/* Table Styling */
+.table-container {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(180deg, #c0c0c0, #6d8ea4);
+  color: #333;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.table th {
+  background-color: #004b73;
+  color: white;
+  font-weight: bold;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Special cell for description that might be long */
+.description-cell {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Button actions */
+.btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-sm {
+  font-size: 12px;
+  padding: 3px 6px;
+}
+
+/* Pagination Styling */
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  background-color: #000000;
+  color: #00FFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-family: Arial, sans-serif;
+}
+
+.pagination-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.page-number {
+  background-color: #5FBAB4;
+  color: black;
+  border: 1px solid black;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+/* Form Overlay */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.outer-box {
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+  color: #333;
+}
+/* Add to your existing PolicyManagement.css */
+
+/* PDF Preview Modal Styles */
+.pdf-preview-modal {
+  max-width: 90%;
+  width: 90%;
+  height: 90vh;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-preview-body {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.pdf-preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white;
+}
+
+/* Adjust the description column width */
+.description-cell {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Make buttons display in a row with proper spacing */
+td .btn {
+  margin-right: 5px;
+}
+
+/* Add extra styles for the action buttons */
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Adjust modal footer for PDF preview */
+.pdf-preview-modal .modal-footer {
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* Add to your existing PolicyManagement.css */
+
+/* Table Column Width Management */
+.table-container {
+  overflow-x: auto; /* Ensure horizontal scrolling on small screens */
+}
+
+/* Set specific widths for each column */
+.table th:nth-child(1) { /* Title */
+  width: 20%;
+}
+
+.table th:nth-child(2) { /* Description */
+  width: 30%;
+}
+
+.table th:nth-child(3) { /* Category */
+  width: 12%;
+}
+
+.table th:nth-child(4) { /* Year */
+  width: 8%;
+}
+
+.table th:nth-child(5) { /* Date Created/Archived */
+  width: 15%;
+}
+
+.table th:nth-child(6), /* Archive Reason or Actions */
+.table th:last-child { /* Actions */
+  width: 15%;
+  min-width: 180px; /* Ensure minimum width for buttons */
+}
+
+/* Description column with ellipsis */
+.description-cell {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Prevent action buttons from wrapping */
+td .btn {
+  margin-right: 3px;
+  padding: 0.25rem 0.4rem; /* Make buttons slightly smaller */
+}
+
+/* Make the action buttons display inline */
+td .btn-group, 
+td .action-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+/* PDF Preview Modal Styles */
+.pdf-preview-modal {
+  max-width: 90%;
+  width: 90%;
+  height: 90vh;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-preview-body {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.pdf-preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white;
+}
+
+/* Add extra styles for the action buttons */
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Adjust modal footer for PDF preview */
+.pdf-preview-modal .modal-footer {
+  justify-content: space-between;
+  padding: 15px;
+}
+/* Add these styles to your PolicyManagement.css file */
+
+.filter-dropdown-wrapper {
+width: 220px !important;
+}
+
+.filter-dropdown {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+padding-right: 30px !important;
+}
+
+.barangay-filter {
+position: relative;
+display: flex;
+align-items: center;
+}
+
+/* Optional: Style improvements for the dropdown */
+.filter-dropdown:focus {
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+border-color: #80bdff;
+outline: 0;
+}
+
+/* Style for the filter wrapper to ensure proper spacing */
+.filter-wrapper {
+display: flex;
+align-items: center;
+margin-bottom: 0.5rem;
+}
+
+.policy-management-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.policy-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.policy-tab {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.policy-tab:hover {
+    color: #007bff;
+}
+
+.policy-tab.active {
+    color: #007bff;
+}
+
+.policy-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #007bff;
+}
+
+.policy-content {
+    min-height: 400px;
+}

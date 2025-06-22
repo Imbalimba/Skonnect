@@ -1,0 +1,673 @@
+.sk-award-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sk-award-form-container.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sk-award-form-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.sk-award-form-content {
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  animation: sk-award-form-slide-up 0.3s ease forwards;
+}
+
+@keyframes sk-award-form-slide-up {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.sk-award-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.sk-award-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.sk-award-form-close-btn {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sk-award-form-close-btn:hover {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  transform: translateY(-2px);
+}
+
+.sk-award-form {
+  padding: 1.5rem;
+}
+
+.sk-award-form-section {
+  margin-bottom: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.sk-award-form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1.5rem;
+}
+
+.sk-award-form-section-icon {
+  color: var(--sk-cmn-sklcss-primary);
+}
+
+.sk-award-form-row {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sk-award-form-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sk-award-form-row:last-child {
+  margin-bottom: 0;
+}
+
+.sk-award-form-group {
+  flex: 1;
+}
+
+.sk-award-form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.sk-award-form-input,
+.sk-award-form-select,
+.sk-award-form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: white;
+  color: #1f2937;
+  transition: all 0.2s ease;
+}
+
+.sk-award-form-input:focus,
+.sk-award-form-select:focus,
+.sk-award-form-textarea:focus {
+  border-color: var(--sk-cmn-sklcss-primary);
+  box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.15);
+}
+
+.sk-award-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.sk-award-form-input.error,
+.sk-award-form-select.error,
+.sk-award-form-textarea.error {
+  border-color: #ef4444;
+  background-color: #fff5f5;
+}
+
+.sk-award-form-error {
+  font-size: 0.85rem;
+  color: #ef4444;
+  margin-top: 0.5rem;
+}
+
+.sk-award-form-error.general {
+  padding: 0.75rem;
+  background-color: #fee2e2;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.sk-award-form-date-input {
+  position: relative;
+}
+
+.sk-award-form-date-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.sk-award-form-file-input {
+  display: none;
+}
+
+/* Main Image Upload */
+.sk-award-form-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.sk-award-form-upload-box {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.sk-award-form-upload-box:hover {
+  border-color: var(--sk-cmn-sklcss-primary);
+  background-color: #f0f7ff;
+}
+
+.sk-award-form-upload-box.error {
+  border-color: #ef4444;
+  background-color: #fff5f5;
+}
+
+.sk-award-form-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sk-award-form-upload-icon {
+  font-size: 2rem;
+  color: #9ca3af;
+}
+
+.sk-award-form-upload-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sk-award-form-upload-title {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.sk-award-form-upload-subtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.sk-award-form-image-preview {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sk-award-form-main-preview {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+}
+
+.sk-award-form-image-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sk-award-form-image-preview:hover .sk-award-form-image-actions {
+  opacity: 1;
+}
+
+.sk-award-form-image-change-btn,
+.sk-award-form-image-remove-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.sk-award-form-image-change-btn {
+  background-color: white;
+  color: #1f2937;
+}
+
+.sk-award-form-image-change-btn:hover {
+  background-color: #f9fafb;
+  transform: translateY(-2px);
+}
+
+.sk-award-form-image-remove-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.sk-award-form-image-remove-btn:hover {
+  background-color: #fecaca;
+}
+
+.sk-award-form-image-preview.removed {
+  opacity: 0.5;
+  position: relative;
+}
+
+.sk-award-form-image-preview.removed::after {
+  content: "Main image is required. Please select a new one.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+/* Media Uploads (formerly Gallery) */
+.sk-award-form-gallery-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  gap: 0.5rem;
+}
+
+.sk-award-form-gallery-upload:hover {
+  border-color: var(--sk-cmn-sklcss-primary);
+  background-color: #f0f7ff;
+}
+
+.sk-award-form-gallery-upload-icon {
+  font-size: 1.75rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.sk-award-form-gallery-upload span {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.sk-award-form-gallery-upload-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.sk-award-form-gallery-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sk-award-form-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.sk-award-form-gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.sk-award-form-gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.sk-award-form-gallery-item.removed {
+  opacity: 0.6;
+  pointer-events: auto;
+}
+
+.sk-award-form-gallery-preview {
+  position: relative;
+  height: 150px;
+  background-color: #f3f4f6;
+}
+
+.sk-award-form-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sk-award-form-gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sk-award-form-gallery-remove-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.sk-award-form-gallery-remove-btn:hover {
+  background-color: #ef4444;
+  transform: scale(1.1);
+}
+
+.sk-award-form-gallery-removed-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.sk-award-form-gallery-undo-btn {
+  background-color: #fff;
+  color: #1f2937;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sk-award-form-gallery-undo-btn:hover {
+  background-color: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sk-award-form-gallery-captions {
+  padding: 0.75rem;
+}
+
+.sk-award-form-gallery-caption {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.sk-award-form-gallery-subcaption {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  resize: none;
+  height: 60px;
+}
+
+.sk-award-form-no-media {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Form Footer */
+.sk-award-form-footer {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-top: 1px solid #eaeaea;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.sk-award-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.sk-award-form-cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: white;
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sk-award-form-cancel-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.sk-award-form-submit-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--sk-cmn-sklcss-primary);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(36, 86, 166, 0.2);
+}
+
+.sk-award-form-submit-btn:hover {
+  background-color: #1e4d8d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(36, 86, 166, 0.25);
+}
+
+.sk-award-form-submit-btn:disabled,
+.sk-award-form-cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Video Preview Styles */
+.sk-award-form-video-preview {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f2937;
+  position: relative;
+}
+
+.sk-award-form-video-icon {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sk-award-form-video-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Media Type Badge */
+.sk-award-form-media-type {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+}
+
+.sk-award-form-media-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.sk-award-form-media-badge.video {
+  background-color: #881337;
+  color: white;
+}
+
+.sk-award-form-media-badge.image {
+  background-color: #0c4a6e;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sk-award-form-content {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .sk-award-form-row.two-col {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sk-award-form-actions {
+    flex-direction: column;
+  }
+  
+  .sk-award-form-cancel-btn,
+  .sk-award-form-submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .sk-award-form-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

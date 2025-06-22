@@ -1,0 +1,295 @@
+/* Enhanced Calendar Component Styles */
+.youth-cal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  background-color: #fff;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.youth-cal-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.youth-cal-title {
+  background: linear-gradient(135deg, #00274D, #003B70);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.youth-cal-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  z-index: 1;
+}
+
+/* Calendar base styling */
+.youth-cal-custom {
+  width: 100%;
+  border: none;
+  font-family: 'Khand', sans-serif;
+}
+
+.youth-cal-custom .react-calendar__navigation {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.youth-cal-custom .react-calendar__navigation button {
+  color: var(--youth-primary);
+  font-weight: 600;
+  font-size: 16px;
+  min-width: 40px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.youth-cal-custom .react-calendar__navigation button:hover,
+.youth-cal-custom .react-calendar__navigation button:focus {
+  background-color: rgba(36, 86, 166, 0.1);
+  color: var(--youth-primary-dark);
+}
+
+.youth-cal-custom .react-calendar__navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Month and weekday headers */
+.youth-cal-custom .react-calendar__month-view__weekdays {
+  background-color: #f8f9fa;
+  padding: 8px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.youth-cal-custom .react-calendar__month-view__weekdays__weekday {
+  padding: 8px;
+  text-align: center;
+}
+
+.youth-cal-custom .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  border: none;
+  cursor: default;
+}
+
+/* Calendar tiles */
+.youth-cal-custom .react-calendar__tile {
+  padding: 12px 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  color: #333;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.youth-cal-custom .react-calendar__tile:hover {
+  background-color: rgba(36, 86, 166, 0.05);
+}
+
+.youth-cal-custom .react-calendar__tile--active {
+  background-color: #0066cc !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 102, 204, 0.3);
+  z-index: 2;
+}
+
+.youth-cal-custom .react-calendar__tile--now {
+  background: #d4f0fc !important;
+  border: 1px solid #0066cc;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+/* Specific event styling - Updated to match Event Management colors */
+.youth-cal-tile-ongoing {
+  background-color: #ffff00 !important; /* Yellow - matches Event Management ongoing */
+  color: #000 !important;
+  position: relative;
+  font-weight: 600 !important;
+}
+
+.youth-cal-tile-ongoing::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #f39c12;
+  border-radius: 50%;
+}
+
+.youth-cal-tile-upcoming {
+  background-color: #b30404 !important; /* Red - matches Event Management upcoming */
+  color: white !important;
+  font-weight: 600 !important;
+  position: relative;
+}
+
+.youth-cal-tile-upcoming::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.youth-cal-tile-completed {
+  background-color: #0d4f00 !important; /* Green - matches Event Management completed */
+  color: white !important;
+  font-weight: 600 !important;
+  position: relative;
+}
+
+.youth-cal-tile-completed::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* Event tooltip on hover */
+.youth-cal-event-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.youth-cal-event-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.youth-cal-custom .react-calendar__tile:hover .youth-cal-event-tooltip {
+  opacity: 1;
+}
+
+/* Legend for events */
+.youth-cal-legend {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 5px;
+  gap: 15px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.youth-cal-legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.youth-cal-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+/* Legend colors - Updated to match Event Management */
+.youth-cal-legend-ongoing {
+  background-color: #ffff00;
+  border: 1px solid #f39c12;
+}
+
+.youth-cal-legend-upcoming {
+  background-color: #b30404;
+  border: 1px solid #900;
+}
+
+.youth-cal-legend-completed {
+  background-color: #0d4f00;
+  border: 1px solid #073600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .youth-cal-container {
+    margin: 15px 0;
+  }
+  
+  .youth-cal-title {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+  
+  .youth-cal-custom .react-calendar__tile {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  
+  .youth-cal-legend {
+    padding: 8px 5px;
+    gap: 10px;
+  }
+  
+  .youth-cal-legend-item {
+    font-size: 10px;
+  }
+  
+  .youth-cal-legend-color {
+    width: 10px;
+    height: 10px;
+  }
+}

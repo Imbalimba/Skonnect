@@ -1,0 +1,152 @@
+{
+  "node_modules/canvg/lib/index.es.js": {
+    "file": "assets/index.es-VdljfobP.js",
+    "name": "index.es",
+    "src": "node_modules/canvg/lib/index.es.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "node_modules/dompurify/dist/purify.es.mjs": {
+    "file": "assets/purify.es-Bf0oSh3b.js",
+    "name": "purify.es",
+    "src": "node_modules/dompurify/dist/purify.es.mjs",
+    "isDynamicEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BZOGkrbZ.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/SK/images/background.png": {
+    "file": "assets/background-CuxNLC7Y.png",
+    "src": "resources/js/SK/images/background.png"
+  },
+  "resources/js/SK/images/profile.png": {
+    "file": "assets/profile-DC2uM3Cu.png",
+    "src": "resources/js/SK/images/profile.png"
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-BgIYFw8Z.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/dompurify/dist/purify.es.mjs",
+      "node_modules/canvg/lib/index.es.js"
+    ],
+    "css": [
+      "assets/app-DCbVqLOi.css"
+    ],
+    "assets": [
+      "assets/logo-BXwfxKjA.png",
+      "assets/delapaz_logo-DVX8yq8T.png",
+      "assets/manggahan_logo-JIN_cIQr.png",
+      "assets/maybunga_logo-CvK90B6S.png",
+      "assets/pinagbuhatan_logo-DE32d0AA.png",
+      "assets/santolan_logo-3LUPxEo_.png",
+      "assets/rosario_logo-BHTqUPFZ.png",
+      "assets/sanmiguel_logo-CNykoIxJ.png",
+      "assets/sta lucia_logo-B9LUOovw.png",
+      "assets/events-5psjZQyb.png",
+      "assets/fem-Bk3GaJmd.png",
+      "assets/home-banner-CB3XIKHy.png",
+      "assets/background-CuxNLC7Y.png",
+      "assets/profile-DC2uM3Cu.png",
+      "assets/search-BUuyfvl0.png",
+      "assets/award-banner-DHhFelH9.jpg",
+      "assets/directory-banner-BIk6M0P9.jpg",
+      "assets/faq-banner-D7B-FjJG.jpg",
+      "assets/template-banner-D4pVWW5z.jpg",
+      "assets/policy-banner-7FpFpHNO.jpg",
+      "assets/people-CJraL23m.png",
+      "assets/male-gJAD69h1.png",
+      "assets/female-7LFK83uw.png"
+    ]
+  },
+  "resources/js/assets/award-banner.jpg": {
+    "file": "assets/award-banner-DHhFelH9.jpg",
+    "src": "resources/js/assets/award-banner.jpg"
+  },
+  "resources/js/assets/delapaz_logo.png": {
+    "file": "assets/delapaz_logo-DVX8yq8T.png",
+    "src": "resources/js/assets/delapaz_logo.png"
+  },
+  "resources/js/assets/directory-banner.jpg": {
+    "file": "assets/directory-banner-BIk6M0P9.jpg",
+    "src": "resources/js/assets/directory-banner.jpg"
+  },
+  "resources/js/assets/events.png": {
+    "file": "assets/events-5psjZQyb.png",
+    "src": "resources/js/assets/events.png"
+  },
+  "resources/js/assets/faq-banner.jpg": {
+    "file": "assets/faq-banner-D7B-FjJG.jpg",
+    "src": "resources/js/assets/faq-banner.jpg"
+  },
+  "resources/js/assets/fem.png": {
+    "file": "assets/fem-Bk3GaJmd.png",
+    "src": "resources/js/assets/fem.png"
+  },
+  "resources/js/assets/female.png": {
+    "file": "assets/female-7LFK83uw.png",
+    "src": "resources/js/assets/female.png"
+  },
+  "resources/js/assets/home-banner.png": {
+    "file": "assets/home-banner-CB3XIKHy.png",
+    "src": "resources/js/assets/home-banner.png"
+  },
+  "resources/js/assets/logo.png": {
+    "file": "assets/logo-BXwfxKjA.png",
+    "src": "resources/js/assets/logo.png"
+  },
+  "resources/js/assets/male.png": {
+    "file": "assets/male-gJAD69h1.png",
+    "src": "resources/js/assets/male.png"
+  },
+  "resources/js/assets/manggahan_logo.png": {
+    "file": "assets/manggahan_logo-JIN_cIQr.png",
+    "src": "resources/js/assets/manggahan_logo.png"
+  },
+  "resources/js/assets/maybunga_logo.png": {
+    "file": "assets/maybunga_logo-CvK90B6S.png",
+    "src": "resources/js/assets/maybunga_logo.png"
+  },
+  "resources/js/assets/people.png": {
+    "file": "assets/people-CJraL23m.png",
+    "src": "resources/js/assets/people.png"
+  },
+  "resources/js/assets/pinagbuhatan_logo.png": {
+    "file": "assets/pinagbuhatan_logo-DE32d0AA.png",
+    "src": "resources/js/assets/pinagbuhatan_logo.png"
+  },
+  "resources/js/assets/policy-banner.jpg": {
+    "file": "assets/policy-banner-7FpFpHNO.jpg",
+    "src": "resources/js/assets/policy-banner.jpg"
+  },
+  "resources/js/assets/rosario_logo.png": {
+    "file": "assets/rosario_logo-BHTqUPFZ.png",
+    "src": "resources/js/assets/rosario_logo.png"
+  },
+  "resources/js/assets/sanmiguel_logo.png": {
+    "file": "assets/sanmiguel_logo-CNykoIxJ.png",
+    "src": "resources/js/assets/sanmiguel_logo.png"
+  },
+  "resources/js/assets/santolan_logo.png": {
+    "file": "assets/santolan_logo-3LUPxEo_.png",
+    "src": "resources/js/assets/santolan_logo.png"
+  },
+  "resources/js/assets/search.png": {
+    "file": "assets/search-BUuyfvl0.png",
+    "src": "resources/js/assets/search.png"
+  },
+  "resources/js/assets/sta lucia_logo.png": {
+    "file": "assets/sta lucia_logo-B9LUOovw.png",
+    "src": "resources/js/assets/sta lucia_logo.png"
+  },
+  "resources/js/assets/template-banner.jpg": {
+    "file": "assets/template-banner-D4pVWW5z.jpg",
+    "src": "resources/js/assets/template-banner.jpg"
+  }
+}

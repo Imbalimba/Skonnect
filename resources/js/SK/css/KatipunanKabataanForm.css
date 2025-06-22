@@ -1,0 +1,397 @@
+/* Form Overlay */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Outer Box */
+.outer-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling */
+.outer-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.outer-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.outer-box::-webkit-scrollbar-thumb {
+  background: #0c9fcc;
+  border-radius: 8px;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f0f0f0;
+  border: none;
+  font-size: 22px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #e2e2e2;
+  transform: rotate(90deg);
+}
+
+/* Form Title */
+.form-title {
+  font-weight: 700;
+  color: #0c9fcc;
+  margin-bottom: 25px;
+  font-size: 24px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #0c9fcc;
+}
+
+/* Form Progress Indicator */
+.form-progress {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
+}
+
+.step-number.active {
+  background-color: #0c9fcc;
+  color: white;
+  border-color: #0c9fcc;
+}
+
+.step-label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.progress-connector {
+  flex: 1;
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 0 15px;
+  position: relative;
+  top: -12px;
+  max-width: 100px;
+}
+
+/* Form Note */
+.form-note {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+  border-left: 4px solid #0c9fcc;
+}
+
+.required-field {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.inner-box {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 300px; /* Ensure minimum height */
+}
+
+/* Form Section */
+.form-section {
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Title */
+.section-title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+/* Input Container */
+.input-container {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 3px;
+  position: relative;
+}
+
+.input-container.full-width {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+/* Form Input Label */
+.input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Form Input */
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0c9fcc;
+  box-shadow: 0 0 0 3px rgba(12, 159, 204, 0.1);
+}
+
+/* Select Input Styling */
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+/* Error Message */
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Conditional Field Styling */
+.conditional-field {
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 3px solid #0c9fcc;
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  bottom: 0;
+  background: #f8f9fa;
+  padding: 15px 0;
+
+}
+
+/* Button Styles */
+.next-btn, .prev-btn, .submit-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.next-btn {
+  background-color: #0c9fcc;
+  color: white;
+  border: none;
+  margin-left: auto;
+}
+
+.next-btn:hover {
+  background-color: #0b8cb3;
+  transform: translateY(-2px);
+}
+
+.prev-btn {
+  background-color: #f8f9fa;
+  color: #555;
+  border: 1px solid #ced4da;
+}
+
+.prev-btn:hover {
+  background-color: #e9ecef;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Button Icons */
+.btn-icon {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .outer-box {
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+  }
+  
+  .form-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .next-btn, .prev-btn, .submit-btn {
+    width: 100%;
+  }
+  
+  .progress-connector {
+    max-width: 60px;
+  }
+  
+  .conditional-field {
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+}
+
+/* Form field focus animations */
+.form-input:focus {
+  transform: translateY(-1px);
+}
+
+/* Error message styling */
+.error-message {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+  background-color: rgba(217, 83, 79, 0.1);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+/* Style for fields in error state */
+.form-input.error {
+  border-color: #d9534f;
+}
+
+/* Style for the submit button when disabled */
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

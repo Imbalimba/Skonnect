@@ -1,0 +1,458 @@
+/* Updated OrganizationChartModal.css */
+.org-chart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 1rem;
+  animation: org-chart-fade-in 0.3s ease;
+}
+
+@keyframes org-chart-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.org-chart-modal-container {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  animation: org-chart-slide-up 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes org-chart-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.org-chart-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(90deg, var(--youth-primary, #2456a6), var(--youth-primary-dark, #1a4080));
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.org-chart-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.org-chart-modal-icon {
+  opacity: 0.9;
+}
+
+.org-chart-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.org-chart-modal-download {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.org-chart-modal-download:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.org-chart-modal-download:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.org-chart-spinner {
+  animation: org-chart-spin 1s linear infinite;
+}
+
+@keyframes org-chart-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.org-chart-modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.org-chart-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.org-chart-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.org-chart-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #777;
+}
+
+.org-chart-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--youth-primary, #2456a6);
+  border-radius: 50%;
+  animation: org-chart-spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.org-chart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* Full organizational chart */
+.org-chart-full {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  background-color: white;
+}
+
+.org-chart-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-chart-section-title {
+  font-size: 1.5rem;
+  color: var(--youth-primary, #2456a6);
+  margin-bottom: 2rem;
+  position: relative;
+  font-weight: 600;
+}
+
+.org-chart-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--youth-primary, #2456a6);
+}
+
+/* Tree view structure */
+.org-chart-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.org-chart-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-chart-children {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.org-chart-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Department sections */
+.org-chart-departments {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.org-chart-department {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-chart-department-title {
+  font-size: 1.25rem;
+  color: var(--youth-primary, #2456a6);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-weight: 600;
+}
+
+.org-chart-department-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--youth-primary, #2456a6);
+}
+
+.org-chart-department-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+}
+
+/* Person cards */
+.org-chart-card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 100%;
+  border-left: 4px solid var(--youth-primary, #2456a6);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.org-chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.org-chart-card-large {
+  min-width: 350px;
+  padding: 1.25rem;
+}
+
+.org-chart-card-medium {
+  min-width: 300px;
+}
+
+.org-chart-card-small {
+  min-width: 250px;
+  padding: 0.85rem;
+}
+
+.org-chart-avatar {
+  background-color: var(--youth-primary, #2456a6);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.org-chart-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.org-chart-card-large .org-chart-avatar {
+  width: 70px;
+  height: 70px;
+  font-size: 1.75rem;
+}
+
+.org-chart-card-small .org-chart-avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 1.25rem;
+}
+
+.org-chart-person-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.org-chart-person-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 0.25rem 0;
+}
+
+.org-chart-card-large .org-chart-person-name {
+  font-size: 1.25rem;
+}
+
+.org-chart-card-small .org-chart-person-name {
+  font-size: 1rem;
+}
+
+.org-chart-person-role {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.org-chart-person-responsibilities {
+  color: #777;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
+.org-chart-card-large .org-chart-person-role {
+  font-size: 1rem;
+}
+
+.org-chart-card-small .org-chart-person-role {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.org-chart-person-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.org-chart-contact-link {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.org-chart-card-small .org-chart-contact-link {
+  font-size: 0.8rem;
+}
+
+.org-chart-contact-link:hover {
+  color: var(--youth-primary, #2456a6);
+}
+
+.org-chart-contact-icon {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--youth-primary, #2456a6);
+}
+
+.org-chart-contact-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Connecting lines */
+.org-chart-vertical-line {
+  height: 40px;
+  width: 2px;
+  background-color: #d1d5db;
+  margin: 10px 0;
+}
+
+.org-chart-vertical-line-short {
+  height: 20px;
+  width: 2px;
+  background-color: #d1d5db;
+  margin-bottom: 10px;
+}
+
+.org-chart-horizontal-line {
+  height: 2px;
+  width: 80%;
+  background-color: #d1d5db;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .org-chart-modal-container {
+    width: 95%;
+    height: 95vh;
+  }
+  
+  .org-chart-modal-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .org-chart-card-large {
+    min-width: 300px;
+  }
+  
+  .org-chart-card-medium {
+    min-width: 250px;
+  }
+  
+  .org-chart-card-small {
+    min-width: 220px;
+  }
+}

@@ -1,0 +1,272 @@
+/* Enhanced Announcement Styles */
+.youth-announce-container {
+  background-color: var(--youth-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.youth-announce-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--youth-primary), var(--youth-secondary));
+}
+
+.youth-announce-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0.75rem;
+}
+
+.youth-announce-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--youth-primary);
+  margin: 0;
+}
+
+.youth-announce-toggle-btn {
+  background-color: var(--youth-primary);
+  color: var(--youth-white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.youth-announce-toggle-btn:hover {
+  background-color: var(--youth-primary-dark);
+  transform: translateY(-2px);
+}
+
+.youth-announce-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.youth-announce-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.youth-announce-item:hover {
+  transform: translateY(-3px);
+}
+
+.youth-announce-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--youth-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.youth-announce-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.25em 0.6em;
+  border-radius: 50px;
+  display: inline-block;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.youth-announce-badge-federation {
+  background-color: rgba(36, 86, 166, 0.1);
+  color: var(--youth-primary);
+}
+
+.youth-announce-badge-barangay {
+  background-color: rgba(213, 32, 39, 0.1);
+  color: var(--youth-secondary);
+}
+
+.youth-announce-content {
+  margin-top: 0.5rem;
+}
+
+.youth-announce-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--youth-primary);
+  transition: color 0.3s ease;
+}
+
+.youth-announce-item-text {
+  font-size: 0.9rem;
+  color: var(--youth-text);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.youth-announce-loading {
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--youth-text-muted);
+  animation: youth-announce-pulse 1.5s infinite;
+}
+
+@keyframes youth-announce-pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.youth-announce-empty {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--youth-text-muted);
+  font-style: italic;
+}
+
+.youth-announce-panel {
+  background-color: var(--youth-white);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  animation: youth-announce-fadeIn 0.3s ease-in;
+  overflow: hidden;
+}
+
+@keyframes youth-announce-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.youth-announce-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.youth-announce-list-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.youth-announce-list-item:last-child {
+  border-bottom: none;
+}
+
+.youth-announce-list-item:hover {
+  background-color: rgba(36, 86, 166, 0.05);
+}
+
+.youth-announce-list-item.active {
+  background-color: rgba(36, 86, 166, 0.1);
+  font-weight: 500;
+}
+
+.youth-announce-view-all {
+  text-align: right;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.youth-announce-link {
+  color: var(--youth-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.youth-announce-link::after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.youth-announce-link:hover {
+  color: var(--youth-primary-dark);
+}
+
+.youth-announce-link:hover::after {
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .youth-announce-container {
+    padding: 1rem;
+  }
+  
+  .youth-announce-header {
+    margin-bottom: 1rem;
+  }
+  
+  .youth-announce-item {
+    padding: 0.75rem 0;
+  }
+}
+
+
+.youth-announce-read-more {
+  display: inline-block;
+  margin-left: 5px;
+  color: var(--youth-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.youth-announce-read-more:hover {
+  color: var(--youth-primary-dark);
+  text-decoration: underline;
+}
+
+.youth-announce-title-link {
+  color: var(--youth-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.youth-announce-title-link:hover {
+  color: var(--youth-primary-dark);
+  text-decoration: underline;
+}
+
+/* Ensure the content doesn't overflow its container */
+.youth-announce-item-text {
+  font-size: 0.9rem;
+  color: var(--youth-text);
+  margin-bottom: 0;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}

@@ -1,0 +1,331 @@
+/* SK Announcements Section Custom Styles */
+
+.sk-announce-container {
+    border: 1px solid var(--youth-border);
+    border-left: 4px solid var(--youth-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Header with controls */
+  .sk-announce-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .sk-announce-toggle-btn {
+    background-color: var(--youth-background);
+    color: var(--youth-primary);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sk-announce-toggle-btn:hover {
+    background-color: var(--youth-primary);
+    color: var(--youth-white);
+  }
+  
+  .sk-announce-toggle-btn.active-filter {
+    background-color: var(--youth-primary);
+    color: var(--youth-white);
+  }
+  
+  /* New visibility tabs */
+  .sk-visibility-quick-filters {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--youth-border);
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .sk-visibility-quick-filters::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .sk-visibility-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.5rem;
+    background: none;
+    border: none;
+    color: var(--youth-text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    position: relative;
+    min-width: 90px;
+  }
+  
+  .sk-visibility-tab:hover {
+    color: var(--youth-primary);
+    background-color: rgba(36, 86, 166, 0.05);
+  }
+  
+  .sk-visibility-tab.active {
+    color: var(--youth-primary);
+    font-weight: 600;
+  }
+  
+  .sk-visibility-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--youth-primary);
+  }
+  
+  .sk-tab-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .sk-tab-label {
+    line-height: 1;
+  }
+  
+  /* Filter badges display */
+  .sk-announce-filters-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    background-color: rgba(36, 86, 166, 0.05);
+    border-radius: 0.5rem;
+  }
+  
+  .sk-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--youth-white);
+    border: 1px solid rgba(36, 86, 166, 0.2);
+    border-radius: 50px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .sk-filter-label {
+    font-weight: 600;
+    margin-right: 0.35rem;
+    color: var(--youth-text-muted);
+    display: flex;
+    align-items: center;
+  }
+  
+  .sk-filter-badge-icon {
+    margin-right: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .sk-filter-value {
+    color: var(--youth-primary);
+  }
+  
+  .sk-clear-filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--youth-text-muted);
+    margin-left: 0.5rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+  
+  .sk-clear-filter:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--youth-secondary);
+  }
+  
+  /* SK-only announcement styling */
+  .sk-only-announcement {
+    border-left: 4px solid #4c1d95;
+    background-color: rgba(76, 29, 149, 0.03);
+  }
+  
+  .public-announcement {
+    border-left: 4px solid #047857;
+    background-color: rgba(4, 120, 87, 0.02);
+  }
+  
+  /* SK badge styles */
+  .youth-announce-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .youth-announce-badge-icon {
+    margin-right: 0.3rem;
+    font-size: 0.7rem;
+  }
+  
+  .youth-announce-badge-sk-only {
+    background-color: rgba(76, 29, 149, 0.1);
+    color: #4c1d95;
+  }
+  
+  .youth-announce-badge-public {
+    background-color: rgba(4, 120, 87, 0.1);
+    color: #047857;
+  }
+  
+  .youth-announce-badge-federation {
+    background-color: rgba(36, 86, 166, 0.1);
+    color: var(--youth-primary);
+  }
+  
+  .youth-announce-badge-barangay {
+    background-color: rgba(230, 88, 62, 0.1);
+    color: var(--youth-secondary);
+  }
+  
+  /* Multiple badges formatting */
+  .youth-announce-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Animation for SK-only announcements */
+  @keyframes highlightPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(76, 29, 149, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(76, 29, 149, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(76, 29, 149, 0);
+    }
+  }
+  
+  .sk-only-announcement {
+    animation: highlightPulse 2s ease-out 1;
+  }
+  
+  /* Enhanced filter selection styles */
+  .youth-announce-list-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sk-filter-icon {
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Empty state */
+  .youth-announce-empty {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--youth-text-muted);
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Truncation and Read More styles */
+  .youth-announce-item-text {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .youth-announce-read-more,
+  .youth-announce-read-less {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: var(--youth-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .youth-announce-read-more:hover,
+  .youth-announce-read-less:hover {
+    color: var(--youth-primary-dark);
+    text-decoration: underline;
+  }
+  
+  /* View All Announcements link */
+  .youth-announce-view-all {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--youth-border);
+  }
+  
+  .youth-announce-link {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: var(--youth-primary);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .youth-announce-link:hover {
+    background-color: rgba(36, 86, 166, 0.1);
+    color: var(--youth-primary-dark);
+  }
+  
+  /* Adaptive layout for small screens */
+  @media (max-width: 576px) {
+    .sk-announce-filters-display {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .youth-announce-badges {
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+    }
+    
+    .sk-tab-label {
+      display: none;
+    }
+    
+    .sk-tab-icon {
+      margin-right: 0;
+      font-size: 1rem;
+    }
+    
+    .youth-announce-read-more,
+    .youth-announce-read-less {
+      display: block;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }

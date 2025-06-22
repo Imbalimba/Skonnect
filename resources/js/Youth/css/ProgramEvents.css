@@ -1,0 +1,1271 @@
+/* ProgramEvents.css - Fully updated with youth-pe- prefixes */
+:root {
+    --youth-primary: #2456a6;
+    --youth-primary-dark: #1a4080;
+    --youth-secondary: #d52027;
+    --youth-secondary-dark: #b31922;
+    --youth-text: #333333;
+    --youth-text-muted: #667085;
+    --youth-border: #e7eaf3;
+    --youth-background: #f8f9fa;
+    --youth-white: #ffffff;
+    --youth-transition: all 0.3s ease;
+  }
+  
+  /* Banner specific to Program & Events page */
+  .youth-pe-banner {
+    position: relative;
+    background: url('../../assets/program-events-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .youth-pe-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--youth-primary), var(--youth-secondary));
+    z-index: 2;
+  }
+  
+  .youth-pe-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(36, 86, 166, 0.7), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+  }
+  
+  .youth-pe-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .youth-pe-banner-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .youth-pe-banner-subtitle {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Content Wrapper */
+  .youth-pe-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  
+  /* Container */
+  .youth-pe-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  /* Tabs Navigation */
+  .youth-pe-tabs-container {
+    border-bottom: 1px solid #e7eaf3;
+  }
+  
+  .youth-pe-tabs {
+    display: flex;
+    position: relative;
+  }
+  
+  .youth-pe-tabs::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #e7eaf3;
+  }
+  
+  .youth-pe-tab {
+    background: none;
+    border: none;
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #667085;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 3px solid transparent;
+    z-index: 2;
+  }
+  
+  .youth-pe-tab:hover {
+    color: var(--youth-primary);
+    background-color: rgba(36, 86, 166, 0.05);
+  }
+  
+  .youth-pe-tab-active {
+    color: var(--youth-primary);
+    border-bottom-color: var(--youth-primary);
+    background-color: rgba(36, 86, 166, 0.05);
+  }
+  
+  /* Filter Section */
+  .youth-pe-filter-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e7eaf3;
+  }
+  
+  .youth-pe-filter-toggle {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    border: 1px solid #e7eaf3;
+    border-radius: 6px;
+    padding: 0.85rem 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .youth-pe-filter-toggle:hover {
+    background-color: #f1f4f9;
+  }
+  
+  .youth-pe-filter-icon {
+    color: var(--youth-primary);
+    margin-right: 8px;
+  }
+  
+  .youth-pe-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .youth-pe-filter-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #e7eaf3;
+    border-radius: 50px;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #667085;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .youth-pe-filter-btn:hover {
+    background-color: #f1f4f9;
+    border-color: #d9dce6;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .youth-pe-filter-active {
+    background-color: var(--youth-primary);
+    color: white;
+    border-color: var(--youth-primary);
+    box-shadow: 0 2px 5px rgba(36, 86, 166, 0.2);
+  }
+  
+  .youth-pe-filter-active:hover {
+    background-color: var(--youth-primary-dark);
+  }
+  
+  /* Section Title */
+  .youth-pe-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--youth-primary);
+    margin: 1.5rem;
+    padding-bottom: 0.75rem;
+    position: relative;
+  }
+  
+  .youth-pe-section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--youth-primary), var(--youth-secondary));
+  }
+  
+  /* Login Notice Styles */
+  .youth-pe-login-notice {
+    background-color: #f8f9fa;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 0 1.5rem 1.5rem;
+    border-radius: 4px;
+  }
+  
+  .youth-pe-login-link {
+    color: #007bff;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+  
+  .youth-pe-login-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* No Content Message */
+  .youth-pe-no-content {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 1.5rem;
+    border: 1px dashed #e7eaf3;
+  }
+  
+  .youth-pe-no-content-text {
+    color: #667085;
+    font-size: 1.1rem;
+  }
+  
+  /* Loading State */
+  .youth-pe-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin: 1.5rem;
+  }
+  
+  .youth-pe-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--youth-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Error message */
+  .youth-pe-error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--youth-secondary);
+  }
+  
+  .youth-pe-error-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Content Sections */
+  .youth-pe-events-content,
+  .youth-pe-programs-content {
+    padding: 1rem 1.5rem 2rem;
+  }
+  
+  /* Events Grid */
+  .youth-pe-events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Event Card */
+  .youth-pe-event-card {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f2f5;
+    transition: all 0.3s ease;
+  }
+  
+  .youth-pe-event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #e2e8f0;
+  }
+  
+  .youth-pe-event-image {
+    position: relative;
+    width: 280px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  
+  .youth-pe-event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .youth-pe-event-card:hover .youth-pe-event-img {
+    transform: scale(1.05);
+  }
+  
+  .youth-pe-event-category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--youth-primary);
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  .youth-pe-event-content {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .youth-pe-event-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+    color: var(--youth-primary);
+    line-height: 1.3;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+  
+  .youth-pe-event-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--youth-primary), var(--youth-secondary));
+  }
+  
+  .youth-pe-event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: #f8fafe;
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--youth-primary);
+  }
+  
+  .youth-pe-event-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #4c5875;
+    font-size: 0.95rem;
+  }
+  
+  .youth-pe-event-icon {
+    color: var(--youth-primary);
+    min-width: 16px;
+  }
+  
+  .youth-pe-event-text {
+    font-weight: 500;
+  }
+  
+  .youth-pe-event-description {
+    color: #667085;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+  
+  .youth-pe-event-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+  }
+  
+  /* Tags Container */
+  .youth-pe-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .youth-pe-tag {
+    background-color: #e9f5ff;
+    border: 1px solid #b8d8f8;
+    border-radius: 50px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    color: #1a73e8;
+    white-space: nowrap;
+  }
+  
+  .youth-pe-tag-more {
+    background-color: #f1f3f4;
+    border: 1px solid #dadce0;
+    border-radius: 50px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    color: #5f6368;
+    margin-left: 0.25rem;
+  }
+  
+  .youth-pe-attendees-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .youth-pe-attendee-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--youth-text-muted);
+  }
+  
+  .youth-pe-attendee-separator {
+    color: var(--youth-text-muted);
+    margin: 0 0.25rem;
+  }
+  
+  /* Programs Grid */
+  .youth-pe-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 1.5rem 2rem;
+  }
+  
+  /* Program Card */
+  .youth-pe-program-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f2f5;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .youth-pe-program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #e2e8f0;
+  }
+  
+  .youth-pe-program-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .youth-pe-program-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .youth-pe-program-card:hover .youth-pe-program-img {
+    transform: scale(1.05);
+  }
+  
+  .youth-pe-program-category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--youth-primary);
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  .youth-pe-program-content {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .youth-pe-program-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--youth-primary);
+    line-height: 1.3;
+  }
+  
+  .youth-pe-program-description {
+    color: #667085;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  
+  .youth-pe-program-info {
+    margin-bottom: 1.5rem;
+    background-color: #f8fafe;
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--youth-primary);
+  }
+  
+  .youth-pe-program-info-item {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #4c5875;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .youth-pe-program-info-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .youth-pe-program-info-label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .youth-pe-program-info-text {
+    font-weight: 500;
+  }
+  
+  .youth-pe-full-width {
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+  }
+  
+  .youth-pe-programs-content {
+    padding: 1rem 0 2rem;
+  }
+
+  /* CTA Section */
+  .youth-pe-cta {
+    background-image: linear-gradient(rgba(36, 86, 166, 0.9), rgba(36, 86, 166, 0.95)), url('/images/cta-background.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .youth-pe-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+  }
+  
+  .youth-pe-cta-content {
+    text-align: center;
+    padding: 3.5rem 2rem;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .youth-pe-cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .youth-pe-cta-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+  }
+  
+  .youth-pe-cta-btn {
+    display: inline-block;
+    background-color: white;
+    color: var(--youth-primary);
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .youth-pe-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    color: var(--youth-primary-dark);
+  }
+  
+  /* Button styles */
+  .youth-pe-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .youth-pe-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+  
+  .youth-pe-btn:hover::after {
+    transform: translateX(100%);
+  }
+  
+  .youth-pe-btn-primary {
+    background-color: var(--youth-primary);
+    color: white;
+    box-shadow: 0 4px 6px rgba(36, 86, 166, 0.2);
+  }
+  
+  .youth-pe-btn-primary:hover {
+    background-color: var(--youth-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(36, 86, 166, 0.3);
+    color: white;
+  }
+  
+  .youth-pe-btn-secondary {
+    background-color: transparent;
+    color: var(--youth-primary);
+    box-shadow: 0 4px 6px rgba(36, 86, 166, 0.1);
+    border: 1px solid var(--youth-primary);
+  }
+  
+  .youth-pe-btn-secondary:hover {
+    background-color: rgba(36, 86, 166, 0.05);
+    color: var(--youth-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(36, 86, 166, 0.15);
+    border-color: var(--youth-primary-dark);
+  }
+  
+  .youth-pe-btn[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Modal Styles */
+  .youth-pe-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  
+  .youth-pe-modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .youth-pe-modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--youth-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .youth-pe-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--youth-primary);
+    font-weight: 600;
+  }
+  
+  .youth-pe-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #667085;
+    transition: all 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .youth-pe-modal-close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--youth-secondary);
+  }
+  
+  .youth-pe-modal-body {
+    padding: 1.75rem;
+    overflow-y: auto;
+    max-height: calc(90vh - 140px);
+  }
+  
+  .youth-pe-modal-footer {
+    padding: 1.25rem 1.75rem;
+    border-top: 1px solid var(--youth-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    background-color: #f8fafe;
+  }
+  
+  /* Event Details Styles */
+  .youth-pe-event-details-section {
+    margin-bottom: 2rem;
+  }
+  
+  .youth-pe-event-details-section h3 {
+    color: var(--youth-primary);
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .youth-pe-event-details-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--youth-primary), var(--youth-secondary));
+  }
+  
+  .youth-pe-detail-row {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .youth-pe-detail-label {
+    font-weight: 600;
+    color: #4c5875;
+    width: 160px;
+    flex-shrink: 0;
+  }
+  
+  .youth-pe-barangay-badge {
+    background-color: #e9f5ff;
+    color: #1a73e8;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  /* Registration Modal Styles */
+  .youth-pe-registration-modal {
+    max-width: 600px;
+  }
+  
+  .youth-pe-registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .youth-pe-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .youth-pe-form-label {
+    font-weight: 500;
+    color: #4c5875;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .youth-pe-form-icon {
+    color: var(--youth-primary);
+  }
+  
+  .youth-pe-form-input {
+    padding: 0.85rem 1rem;
+    border: 1px solid #e7eaf3;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .youth-pe-form-input:focus {
+    outline: none;
+    border-color: var(--youth-primary);
+    box-shadow: 0 0 0 3px rgba(36, 86, 166, 0.1);
+  }
+  
+  .youth-pe-form-input.error {
+    border-color: var(--youth-secondary);
+  }
+  
+  .youth-pe-input-error {
+    color: var(--youth-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Footer Styling */
+  .youth-footer {
+    background-color: #001C47;
+    color: #ffffff;
+    padding: 3.5rem 0 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .youth-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .youth-footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .youth-footer-column {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .youth-footer-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+  
+  .youth-footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--youth-secondary);
+  }
+  
+  .youth-footer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+  
+  .youth-footer-contact p {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+  
+  .youth-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .youth-footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .youth-footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .youth-footer-link:hover {
+    opacity: 1;
+    padding-left: 5px;
+  }
+  
+  .youth-social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .youth-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .youth-social-link:hover {
+    background-color: var(--youth-secondary);
+    transform: translateY(-3px);
+  }
+  
+  .youth-footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .youth-copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .youth-pe-banner {
+      height: 350px;
+    }
+    
+    .youth-pe-banner-title {
+      font-size: 2.5rem;
+    }
+    
+    .youth-pe-tab {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .youth-footer-row {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .youth-footer-column {
+      min-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .youth-pe-banner {
+      height: 300px;
+    }
+    
+    .youth-pe-banner-title {
+      font-size: 2rem;
+    }
+    
+    .youth-pe-event-card {
+      flex-direction: column;
+    }
+    
+    .youth-pe-event-image {
+      width: 100%;
+      height: 200px;
+    }
+    
+    .youth-pe-filter-toggle {
+      display: flex;
+    }
+    
+    .youth-pe-filters {
+      display: none;
+    }
+    
+    .youth-pe-filters-active {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .youth-pe-filter-btn {
+      width: 100%;
+      text-align: left;
+    }
+    
+    .youth-pe-event-actions {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .youth-pe-event-actions .youth-pe-btn {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .youth-pe-cta-content {
+      padding: 2.5rem 1.5rem;
+    }
+    
+    .youth-pe-cta-title {
+      font-size: 1.75rem;
+    }
+    
+    .youth-pe-detail-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .youth-pe-detail-label {
+      width: 100%;
+      margin-bottom: 0.25rem;
+    }
+    
+    .youth-pe-modal-footer {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .youth-pe-modal-footer .youth-pe-btn {
+      width: 100%;
+    }
+  }
+  .youth-pe-event-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.youth-pe-event-actions .youth-pe-btn {
+    flex: 1;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .youth-pe-event-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Programs Grid - Add new class for homepage */
+.youth-pe-programs-grid-homepage {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem 2rem;
+}
+
+.youth-pe-program-card-homepage {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f2f5;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.youth-pe-program-card-homepage:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #e2e8f0;
+}
+
+.youth-pe-program-image-homepage {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.youth-pe-program-img-homepage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.youth-pe-program-card-homepage:hover .youth-pe-program-img-homepage {
+    transform: scale(1.05);
+}
+
+.youth-pe-program-category-homepage {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--youth-primary);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.youth-pe-program-content-homepage {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.youth-pe-program-title-homepage {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    color: var(--youth-primary);
+    line-height: 1.3;
+}
+
+.youth-pe-program-description-homepage {
+    color: #667085;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.youth-pe-program-info-homepage {
+    margin-bottom: 1rem;
+    background-color: #f8fafe;
+    border-radius: 8px;
+    padding: 0.75rem;
+    border-left: 3px solid var(--youth-primary);
+}
+
+.youth-pe-program-info-item-homepage {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #4c5875;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.youth-pe-program-info-item-homepage:last-child {
+    margin-bottom: 0;
+}
+
+.youth-pe-program-info-label-homepage {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.youth-pe-program-info-text-homepage {
+    font-weight: 500;
+    font-size: 0.8rem;
+}

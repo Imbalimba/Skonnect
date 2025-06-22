@@ -1,0 +1,154 @@
+.youth-footer {
+  background-color: #001C47;
+  color: #ffffff;
+  padding: 4rem 0 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.youth-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #2456a6, #d52027);
+}
+
+.youth-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.youth-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.youth-footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.youth-footer-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.youth-footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #d52027;
+}
+
+.youth-footer-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.youth-footer-contact p {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.youth-footer-icon {
+  color: #d52027;
+  font-size: 1rem;
+}
+
+.youth-footer-icon-sm {
+  font-size: 0.75rem;
+}
+
+.youth-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.youth-footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.youth-footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.youth-footer-link:hover {
+  opacity: 1;
+  color: #d52027;
+  padding-left: 5px;
+}
+
+.youth-social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.youth-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.youth-social-link:hover {
+  background-color: #d52027;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(213, 32, 39, 0.3);
+}
+
+.youth-footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.youth-copyright {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .youth-footer-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .youth-footer-column {
+    min-width: 100%;
+  }
+}

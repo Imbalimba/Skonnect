@@ -1,0 +1,453 @@
+/* YouthDevelopmentPolicy.css */
+/* Banner Section */
+.youth-ydp-banner {
+  position: relative;
+  background: url('../../assets/policy-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  padding: 4rem 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.youth-ydp-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--youth-primary), var(--youth-secondary));
+}
+
+.youth-ydp-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(36, 86, 166, 0.7), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+
+.youth-ydp-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.youth-ydp-banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.youth-ydp-banner-subtitle {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Main Layout */
+.youth-ydp-main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.youth-ydp-container {
+  width: 100%;
+}
+
+/* Policy Section Layout */
+.youth-ydp-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Sidebar */
+.youth-ydp-sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  align-self: flex-start;
+  position: sticky;
+  top: 100px;
+}
+
+.youth-ydp-sidebar-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--youth-primary);
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.youth-ydp-sidebar-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--youth-secondary);
+}
+
+.youth-ydp-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.youth-ydp-category {
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+}
+
+.youth-ydp-category:hover {
+  background-color: #f0f7ff;
+  border-left-color: var(--youth-primary);
+  color: var(--youth-primary);
+}
+
+.youth-ydp-active {
+  background-color: #f0f7ff;
+  color: var(--youth-primary);
+  font-weight: 600;
+  border-left-color: var(--youth-primary);
+}
+
+.youth-ydp-category-text {
+  flex: 1;
+}
+
+/* Policy Content */
+.youth-ydp-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.youth-ydp-title-container {
+  margin-bottom: 1.5rem;
+}
+
+.youth-ydp-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--youth-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.youth-ydp-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--youth-primary), var(--youth-secondary));
+}
+
+/* Filter Section */
+.youth-ydp-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  background-color: #f8fafe;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--youth-primary);
+}
+
+.youth-ydp-filter-label {
+  font-weight: 600;
+  color: var(--youth-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.youth-ydp-filter-icon {
+  color: var(--youth-primary);
+}
+
+.youth-ydp-barangay-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.youth-ydp-barangay-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #4b5563;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.youth-ydp-barangay-btn:hover {
+  background-color: #f0f7ff;
+  border-color: var(--youth-primary);
+  transform: translateY(-2px);
+}
+
+.youth-ydp-barangay-btn.active {
+  background-color: var(--youth-primary);
+  color: white;
+  border-color: var(--youth-primary);
+  box-shadow: 0 2px 5px rgba(36, 86, 166, 0.2);
+}
+
+/* Table Container */
+.youth-ydp-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.youth-ydp-year-header {
+  background: linear-gradient(90deg, var(--youth-primary), #183e7a);
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+}
+
+.youth-ydp-year-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.youth-ydp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.youth-ydp-th {
+  background-color: #f5f7fa;
+  color: #4b5563;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.youth-ydp-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: top;
+  color: #4b5563;
+}
+
+.youth-ydp-row:hover {
+  background-color: #f0f7ff;
+}
+
+.youth-ydp-row:last-child td {
+  border-bottom: none;
+}
+
+.youth-ydp-title-cell {
+  width: 30%;
+}
+
+.youth-ydp-desc-cell {
+  width: 50%;
+}
+
+.youth-ydp-barangay-cell {
+  width: 20%;
+  font-weight: 500;
+}
+
+.youth-ydp-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--youth-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.youth-ydp-link:hover {
+  color: var(--youth-secondary);
+}
+
+.youth-ydp-link:hover .youth-ydp-download-icon {
+  animation: youth-ydp-bounce 0.5s ease infinite alternate;
+}
+
+@keyframes youth-ydp-bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+.youth-ydp-download-icon {
+  color: var(--youth-secondary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.youth-ydp-file-icon {
+  color: var(--youth-primary);
+  font-size: 1.25rem;
+}
+
+.youth-ydp-link-text {
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+  padding-bottom: 1px;
+}
+
+/* Loading and Empty States */
+.youth-ydp-loading,
+.youth-ydp-empty {
+  padding: 3rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.youth-ydp-loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid #f0f2f5;
+  border-top: 3px solid var(--youth-primary);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: youth-ydp-spin 1s linear infinite;
+}
+
+@keyframes youth-ydp-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.youth-ydp-loading-text {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.youth-ydp-empty-icon {
+  font-size: 3rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.youth-ydp-empty-text {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .youth-ydp-section {
+    flex-direction: column;
+  }
+  
+  .youth-ydp-sidebar {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: static;
+  }
+  
+  .youth-ydp-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .youth-ydp-category {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .youth-ydp-banner {
+    padding: 3rem 1.5rem;
+  }
+  
+  .youth-ydp-banner-title {
+    font-size: 2rem;
+  }
+  
+  .youth-ydp-title {
+    font-size: 1.5rem;
+  }
+  
+  .youth-ydp-filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .youth-ydp-barangay-buttons {
+    width: 100%;
+  }
+  
+  .youth-ydp-table th,
+  .youth-ydp-table td {
+    padding: 0.75rem 1rem;
+  }
+  
+  .youth-ydp-table {
+    min-width: 650px; /* Enable horizontal scrolling on small screens */
+  }
+  
+  .youth-ydp-loading,
+  .youth-ydp-empty {
+    padding: 2rem 1rem;
+  }
+}

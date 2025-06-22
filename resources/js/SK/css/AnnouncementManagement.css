@@ -1,0 +1,219 @@
+.announcement-section{
+    background: linear-gradient(180deg, #D9D9D9, #737373);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  /* Tab styling */
+  .tab {
+    background-color: #000;
+    color: #00a9e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .tab.active {
+    background-color: #00a9e0;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tab:hover:not(.active) {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2196F3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .user-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Archive toggle button styles */
+  .archive-toggle-btn {
+    padding: 10px 16px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: rgb(14, 13, 13);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  
+  .archive-toggle-btn:hover {
+    border-color: #198754;
+    color: #fbff00;
+  }
+  
+  .archive-toggle-btn.viewing-archived {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+  }
+  
+  .archive-toggle-btn.viewing-archived:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Archive banner styles */
+  .archive-banner {
+    background-color: #ffeeba;
+    color: #856404;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Content cell styles */
+  .content-cell {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Visibility badge styles */
+  .visibility-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  
+  .visibility-badge.public {
+    background-color: #198754;
+    color: white;
+  }
+  
+  .visibility-badge.sk_only {
+    background-color: #0d6efd;
+    color: white;
+  }
+  
+  /* Visibility dropdown styles */
+  .visibility-dropdown-wrapper {
+    width: 160px;
+  }
+  
+  .visibility-dropdown {
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .visibility-dropdown:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Dropdown icon styles */
+  .dropdown-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6c757d;
+  }
+  
+  /* Archived row styles */
+  .archived-row {
+    background-color: #f8f9fa;
+    color: #6c757d;
+  }
+  
+  .archived-row td {
+    border-color: #dee2e6;
+  }
+  
+  /* Announcement specific modal styles */
+  .modal-overlay .modal-container textarea {
+    margin-top: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .modal-overlay .modal-container textarea:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+  }
+  
+  /* Form section specific styles */
+  .announcement-section .form-group {
+    gap: 15px;
+  }
+  
+  .announcement-section .form-input[type="date"] {
+    padding: 6px 12px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .visibility-dropdown-wrapper {
+      width: 100%;
+      margin-top: 10px;
+      margin-left: 0 !important;
+    }
+    
+    .content-cell {
+      max-width: 200px;
+    }
+  }
+  
+  

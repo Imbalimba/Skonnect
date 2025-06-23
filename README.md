@@ -4,13 +4,11 @@ This Laravel project has been split into multiple repositories due to space limi
 Repository Structure
 Main Repository
 
-Imbalimba/Skonmeet - Main Laravel application (this repository)
+Imbalimba/Skonnect - Main Laravel application (this repository)
 
 Contains all PHP/Laravel code
 Contains package.json and frontend source files
 Note: node_modules folder has been removed to save space
-
-
 
 Node Modules Repositories
 The node_modules dependencies are split across these repositories:
@@ -22,13 +20,12 @@ Imbalimba/node4 - Node modules part 4
 
 Setup Instructions
 1. Clone the Main Repository
-bashgit clone https://github.com/Imbalimba/Skonmeet.git
+bashgit clone https://github.com/Imbalimba/Skonnect.git
 cd Skonmeet
 2. Install PHP Dependencies
 bashcomposer install
 3. Download Node Modules
-Since the node_modules are split across multiple repositories, you have two options:
-Option A: Download and Merge Node Modules (Recommended)
+Since the node_modules are split across multiple repositories, you have to download and Merge Node Modules:
 bash# Create node_modules directory
 mkdir node_modules
 
